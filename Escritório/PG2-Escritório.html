@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="PG2-Escritório.css">
+    <script src="https://unpkg.com/docx@7.1.0/build/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js"></script>
+    <script  src="PG2-Escritório.js" defer></script>
+    <title>Escritório</title>
+</head>
+<body>
+    <main>
+        <header>
+    <div id="cabecalho">
+        <div id="casa">
+            <button type="button" value="" onclick="voltar()" class="botao" >
+            <a href="../Pg1-inicial.html"><img class="itens" src="casa.png"></a>
+            </button>
+
+            <button type="button" id="seta_esquerda" value="" onclick="voltar()" class="botao" >
+                <img class="seta" src="angulo-esquerdo.png">
+            </button>
+
+            <button type="button" id="seta_direita" value="" onclick="avancar()"  class="botao" >
+                <img class="seta" src="angulo-direito.png">
+            </button>
+            
+        </div>
+        <div id="ferramentas">
+            <img class="itens" src="editar.png">
+
+
+            <img class="itens" src="pasta-aberta.png">
+            <img class="itens" src="upload-de-pasta.png">
+            <img class="itens" src="download-de-pasta.png">
+
+            <button type="button" value="" class="botao">
+                <a href="Estoque/Estoque_Pagina_Inicial.html"><img class="itens" src="aliancas-de-casamento.png"></a>
+            </button>
+
+            <button type="reset" id="limpar" value="" onclick="limpar()" class="botao">
+                <img class="itens" src="lixeira.png">
+            </button>
+        </div>
+        <div id="enviar">
+
+            <button type="button" id="div_enviar" class="botao" value="enviar" onclick="verificar(),contador_pedidos(),generate()">
+                <img id="enivar_img" src="aviao-de-papel.png">
+            </button>
+
+        </div>
+    </div>
+</header>
+        <div id="tipo_pedido">
+            <form> 
+                <input type="radio" onchange="m_l()" id="c1" name = 'cliente' class="radio">Mercado Livre
+                <input type="radio" onchange="m_c()" id="c2" name = 'cliente' class="radio">Centro das Alianças
+                <input type="radio"  id="c3" onchange="outros_p()" name = 'cliente' class="radio" >Outros: 
+                <input type="text" id="outros"  name="cliente"  placeholder="Cliente...">
+            </form>
+        </div>
+        <div id="data">
+            20/05/24
+        </div>
+        <div id="pedido_input">
+            <form>
+                <div id="numeracao_div">
+                    Número do Pedido: <select id="n_p" class="pedido" >
+                            <option value='N'  id="Nenhum" name="Pedido" >N</option>
+
+                            <option value='P'  id="P1" name="Pedido" >P1</option>
+                       
+                            <option value="PG" id="PG1" name="Pedido" >PG1</option>
+                       
+                            <option value="PE" id="PE1" name="Pedido" >PE1</option>
+                    </select>
+                    <input type="text" id="nome_m" placeholder="Pedido..." >
+                    <input type="text" id="nome_p" placeholder="Pedido..." >
+                </div>
+                <div id="numeracao">
+                    Númeração M:<input type="number" id="numeracao_m" value='' placeholder="M" >
+                    F:<input type="number" id="numeracao_f" value=''   placeholder="F" >
+                   </div>
+                <div id="unidade">
+                    Unidade: <input type="checkbox" id="umpe" onclick="check_unidade()" name = 'pé' class="radio" >
+                </div>
+                <div id="descricao_div">
+                    <textarea id="descricao_P" class="descricao" placeholder="Descrição do Pedido..."  ></textarea>
+                    <textarea id="descricao_A" class="descricao" placeholder="Descrição da Alianças..."  ></textarea>
+                </div>
+            </form>
+           
+            <div id="imagem_p" >
+                <input type="file" onclick="img_modelo()" id="uploadimg">
+                <div id="modelo">
+                <img id="modelo_rainha" src="rj.png.webp" alt="rainha">
+                <img id="modelo2" src="#" alt="Pré-visualização da Imagem" style="display: none;">
+                </div>
+            </div>
+                <div id="esquerda_input">
+                    <div id="dia_horas">
+                        <div id="Div_entrega">
+                            Entrega:<input id="entrega" type="date">
+                        </div>
+                        <select  name="horaPedido" id="horaPedido">
+                            <option id="Urgente" >Urgente</option>
+                            <option id="Antes_12:00" >Até 14:00</option>
+                            <option id="Depois_13:00" >Até 17:00</option>
+                        </select>
+                    </div>
+                    <div id="grav_externa">
+                        <textarea name="gravacao" class="grav_input" placeholder="Gravações Externa..."></textarea>   
+                    </div>
+                <textarea name="gravacao" id="grav_m" class="grav_input" placeholder="Gravações do Pedido..."></textarea>   
+                </div>
+        </div>
+        <footer>
+            <input type="checkbox" id="gravacao_externa" onclick="grav_e()" name = 'gravacao_externa' class="radio" >Gravação Externa
+            <div class="div_footer">
+                <input type="radio" name = 'pedra' class="radio">Par com pedra
+            <input type="radio"  name = 'pedra' class="radio" >Sem Pedra 
+            </div>
+            <div class="div_footer">
+                <input type="radio"  name = 'estoque' class="radio" >Feminina Estoque
+                <input type="radio"  name = 'estoque' class="radio" >Masculina Estoque
+            </div>
+        </footer>
+    </main>
+</body>
+</html>
