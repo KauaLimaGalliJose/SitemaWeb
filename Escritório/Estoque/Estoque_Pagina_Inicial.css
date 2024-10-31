@@ -45,7 +45,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: radial-gradient(circle, azure, hsl(212, 98%, 82%));
+    background:azure;
     background-repeat: no-repeat;
     background-size: cover;
     height: 90vh;
@@ -78,19 +78,20 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 20%;
+    height: 64px;
     width: 100%;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     font-size: 40px;
     font-weight: 600;
     background-color: antiquewhite;
+    color: rgb(0, 0, 0);
+    
 }
 
 .opcao_imagem{
-    display: flex;
     width: 100%;
-    height: 80%;
+    height: 250px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
