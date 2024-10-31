@@ -62,8 +62,8 @@ main{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    height: 50%;
-    width: 50%;
+    height: 329px;
+    width: 100%;
     margin: 30px;
     border: solid black 5px;
     border-radius: 10px;
