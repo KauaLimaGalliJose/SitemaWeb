@@ -53,15 +53,49 @@ body{
     height: 37px;
     margin-top: 20px;
     font-size: 20px;
+    font-weight: 600;
     font-family: cursive;
     padding: 2%;
+    border: solid black 3px;
 }
 .txtDescricao{
     margin-top: 5px;
-    width: 470px;
-    height: 207px;
+    width: 100%;
+    height: 230px;
     font-size: 20px;
+    font-weight: 600;
     font-family: cursive;
     padding: 0.5%;
     resize: none;
+    border: solid black 3px;
+}
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+}
+#Div_Direita{
+    display: flex;
+    align-items: flex-end;
+    margin-left: 20px;
+    margin-top: 40px;
+    
+
+}
+#modelo{
+    display: flex;
+    height: 300px;
+    border: solid black 5px;
+    border-radius: 10px;
+}
+
+#modelo_imagem{
+    display: none;
+
+}
+#ImagemInput{
+    padding-bottom: 10px;
 }
