@@ -101,8 +101,22 @@ function  verificar(){
  
     let respostas3 = [parseFloat(respostas)]; //'Number' transforma em numero e 'parseFloat' em decimais 
     let respostas4 = [parseFloat(respostas2)];
+// Funcionamento da data ---------------------------------------------------------------------------------
+    let [ano_input, mes_input, dia_input] = dataInput.split('-');
+    let [dia,mes,ano] = x.split('/');
 
-   
+    // data Atual
+    let varcharDia = String(dia);
+    let varcharMes = String(mes);
+    let somaDataAtual  = varcharMes + varcharDia;
+    let somaDataAtualNumber =  Number(somaDataAtual);
+    
+    // data Escrita mo input
+    let varcharDiaInput = String(dia_input);
+    let varcharMesInput = String(mes_input);
+    let somaDataAtual_Input = varcharMesInput + varcharDiaInput;
+    let somaDataInputNumber = Number(somaDataAtual_Input);
+// ▲▲▲▲ Essa pate foi uma conta que eu fiz para falidar a data atual e não colocar as datas anteriores no pedido ------
 do{
     let valido = true;
 
@@ -181,24 +195,22 @@ do{
         document.getElementById('modelo_rainha').style.borderColor = 'black';
     }
     // ------------------------------------------------------Data Personalizada
-    if(dataInput.length !== 0){
-
-        var [ano, mes, dia] = dataInput.split('-');
-
-
-        x = `${dia}/${mes}/${ano}`; // Inverter a data
-    }
-    else{
-        x = formatDate(today);
-    }
-    if(ano < 2024 || ano >= 2220){
+    if( somaDataInputNumber < somaDataAtualNumber || ano_input !== ano){
         alert('O Ano de Entrega está errado')
         valido = false;
+    }
+    else{
+        x = `${dia_input}/${mes_input}/${ano_input}`; // Inverter a data
+    }
+    if(dataInput.length == 0){
+        x = formatDate(today);
     }
 
     if(valido === true){
         break
     }
+    console.log("Soma Data Atual " + somaDataAtualNumber)
+    console.log("Soma Data Input " + somaDataInputNumber)
 }while(valido !== true);
 }
 
