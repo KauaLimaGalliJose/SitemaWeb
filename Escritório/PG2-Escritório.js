@@ -11,6 +11,7 @@ let  select_1 = select.options[2];
 let  select_2 = select.options[3];
 //Outras variaveis
 var sei;
+let dataFinal; //data que aparecerá no documento 
 var feminina;
 var masculina;
 var descricao_cliente;
@@ -54,7 +55,6 @@ function formatDate(date) {
 
 const today = new Date();
 document.getElementById('data').textContent = formatDate(today);
-let x = formatDate(today)
 const dia_e_mes = formatDate_dia_mes(today)
 
 function img_modelo(){
@@ -102,8 +102,9 @@ function  verificar(){
     let respostas3 = [parseFloat(respostas)]; //'Number' transforma em numero e 'parseFloat' em decimais 
     let respostas4 = [parseFloat(respostas2)];
 // Funcionamento da data ---------------------------------------------------------------------------------
+    const data = formatDate(today);
     let [ano_input, mes_input, dia_input] = dataInput.split('-');
-    let [dia,mes,ano] = x.split('/');
+    let [dia,mes,ano] = data.split('/');
 
     // data Atual
     let varcharDia = String(dia);
@@ -195,22 +196,24 @@ do{
         document.getElementById('modelo_rainha').style.borderColor = 'black';
     }
     // ------------------------------------------------------Data Personalizada
-    if( somaDataInputNumber < somaDataAtualNumber || ano_input !== ano){
-        alert('O Ano de Entrega está errado')
+    if( somaDataInputNumber < somaDataAtualNumber ){
+        alert('O Dia ou Mes de Entrega está errado')
+        document.getElementById('entrega').style.borderColor = 'red';
         valido = false;
     }
     else{
-        x = `${dia_input}/${mes_input}/${ano_input}`; // Inverter a data
+        dataFinal = `${dia_input}/${mes_input}/${ano_input}`; // Inverter a data
+        document.getElementById('entrega').style.borderColor = 'black';
     }
     if(dataInput.length == 0){
-        x = formatDate(today);
+        dataFinal = formatDate(today);
     }
 
     if(valido === true){
         break
     }
-    console.log("Soma Data Atual " + somaDataAtualNumber)
-    console.log("Soma Data Input " + somaDataInputNumber)
+    console.log("Soma Data Atual: " + somaDataAtualNumber)
+    console.log("Soma Data Input: " + somaDataInputNumber)
 }while(valido !== true);
 }
 
@@ -350,7 +353,7 @@ function generate() {
                                 color: "FF0000",
                             }),
                             new docx.TextRun({
-                                text: ' -- ' + x,
+                                text: ' -- ' + dataFinal,
                                 bold: true,
                                 size: 60,
                                 color: "000000",
@@ -417,7 +420,7 @@ function generate() {
                                 color: "FF0000",
                             }),
                             new docx.TextRun({
-                                text: ' -- ' + x,
+                                text: ' -- ' + dataFinal,
                                 bold: true,
                                 size: 60,
                                 color: "000000",
