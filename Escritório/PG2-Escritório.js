@@ -202,12 +202,13 @@ do{
         document.getElementById('modelo_rainha').style.borderColor = 'black';
     }
     // ------------------------------------------------------Data Personalizada
-    if( somaDataInputNumber < somaDataAtualNumber || anoAtual !== ano_input ){
+    if( somaDataInputNumber < somaDataAtualNumber ){
         alert('O Dia ou Mes de Entrega está errado')
-        document.getElementById('entrega').style.borderColor = 'red';
+        document.getElementById('entrega').style.borderColor = 'red'; 
         valido = false;
     }
     else{
+        ano_input = anoAtual;
         dataFinal = `${dia_input}/${mes_input}/${ano_input}`; // Inverter a data
         document.getElementById('entrega').style.borderColor = 'black';
     }
