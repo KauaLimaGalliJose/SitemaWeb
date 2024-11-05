@@ -29,6 +29,7 @@ function m_l(){
     document.getElementById('outros').style.visibility = 'hidden';
     document.getElementById('n_p').style.visibility = 'visible';
     document.getElementById('nome_m').style.visibility = 'visible';
+    document.getElementById('outros').value = null;
 
 }
 function m_c(){
@@ -36,7 +37,7 @@ function m_c(){
     document.getElementById('nome_p').style.visibility = 'visible';
     document.getElementById('n_p').style.visibility = 'hidden';
     document.getElementById('nome_m').style.visibility = 'hidden';
-
+    document.getElementById('outros').value = null;
 }
 function formatDate_Ano(date) {
     const year = String(date.getFullYear()) // Pega os últimos 2 dígitos do ano
