@@ -259,6 +259,7 @@ margin-left: 10px;
     height: 300px; /* Mantém a proporção da imagem */
     border: solid black;
     border-radius: 10px;
+    border: solid black 1px;
     background-color: aliceblue;
 }
 #modelo_rainha{
@@ -268,7 +269,7 @@ margin-left: 10px;
     width: 100%;
     height: 300px; /* Mantém a proporção da imagem */
     border-radius: 10px;
-    border: solid black 3px;
+    border: solid black 2px;
 }
 #modelo2{
     display: flex;
@@ -277,7 +278,7 @@ margin-left: 10px;
     width: 100%;
     height: 300px; /* Mantém a proporção da imagem */
     border-radius: 10px;
-    border: solid black 3px;
+    border: solid black 2px;
 }
 
 

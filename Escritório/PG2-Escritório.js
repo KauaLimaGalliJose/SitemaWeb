@@ -38,6 +38,11 @@ function m_c(){
     document.getElementById('nome_m').style.visibility = 'hidden';
 
 }
+function formatDate_Ano(date) {
+    const year = String(date.getFullYear()) // Pega os últimos 2 dígitos do ano
+
+    return `${year}`;
+}
 function formatDate_dia_mes(date) {
     const day = String(date.getDate()).padStart(2, '0');
     const month = String(date.getMonth() + 1).padStart(2, '0'); // Janeiro é 0
@@ -55,7 +60,8 @@ function formatDate(date) {
 
 const today = new Date();
 document.getElementById('data').textContent = formatDate(today);
-const dia_e_mes = formatDate_dia_mes(today)
+const dia_e_mes = formatDate_dia_mes(today);
+const anoAtual = formatDate_Ano(today);
 
 function img_modelo(){
     const fileInput = document.getElementById('uploadimg');
@@ -196,7 +202,7 @@ do{
         document.getElementById('modelo_rainha').style.borderColor = 'black';
     }
     // ------------------------------------------------------Data Personalizada
-    if( somaDataInputNumber < somaDataAtualNumber ){
+    if( somaDataInputNumber < somaDataAtualNumber || anoAtual !== ano_input ){
         alert('O Dia ou Mes de Entrega está errado')
         document.getElementById('entrega').style.borderColor = 'red';
         valido = false;
