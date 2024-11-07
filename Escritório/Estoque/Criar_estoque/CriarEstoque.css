@@ -91,6 +91,9 @@ form{
     
 
 }
+#modelo_rainha{
+    display: flex;
+}
 #modelo{
     display: flex;
     height: 300px;
