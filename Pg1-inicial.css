@@ -161,3 +161,12 @@ body{
 #tema_Claro{
     margin-left: 40px;
 }
+#php{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    font-size: 150%;
+    color: black;
+    text-decoration: none;
+}
