@@ -86,7 +86,7 @@ header{
     border-right: solid black 5px;
     background-color: antiquewhite;
     overflow: hidden; /* Garante que o menu não "quebre" */
-    flex-direction: column;
+    flex-direction: row;
 }
 .radio{
     margin: 10px;
