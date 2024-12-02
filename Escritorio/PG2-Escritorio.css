@@ -74,8 +74,8 @@ header{
 #btEnviar {
     font-family: inherit;
     font-size: 20px;
-    background: rgb(0, 136, 255);
-    color: black;
+    background: rgb(253, 77, 54);
+    color: rgb(0, 0, 0);
     padding: 0.7em 1em;
     padding-left: 0.9em;
     display: flex;
