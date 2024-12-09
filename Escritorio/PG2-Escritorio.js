@@ -218,13 +218,13 @@ do{
     }
 
     if(valido === true){
+        enviar.addEventListener('submit')
         break
     }
     console.log("Soma Data Atual: " + somaDataAtualNumber)
     console.log("Soma Data Input: " + somaDataInputNumber)
 }while(valido !== true);
 
-return valido;
 }
 
 function limpar(){

@@ -8,17 +8,8 @@
 <body>
 Ou 
 <?php
-var_dump($_GET);
+var_dump($_POST);
 print('Enviado') ;
-$cliente = $_GET["liberar"];
-if($cliente == "block"){
-
-    print("\nCerto\n");
-
-}
-else{
-    echo("NÕ ESTA CERTO");
-}
 
 ?>
 </body>
