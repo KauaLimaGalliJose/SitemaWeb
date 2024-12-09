@@ -11,7 +11,7 @@
 </head>
 <body>
     <main>
-    <form id="formulario" action = "PG2-Escritorio-1.php"; method="post">
+    <form action="PG2-Escritorio-1.php" name="formulario1" method="post" id="formulario1" >
         <header>
     <div id="cabecalho">
         <div id="casa">
@@ -46,7 +46,7 @@
         </div>
         <div id="enviar">
 
-            <button id="btEnviar" type="submit" value="enviar" onclick="verificar(),contador_pedidos(),generate()">
+            <button id="btEnviar" type="submit" value="enviar" onclick="verificar()">
                     <div class="svg-wrapper-1">
                       <div class="svg-wrapper">
                         <svg
@@ -69,18 +69,18 @@
     </div>
 </header>
         <div id="tipo_pedido">
-            <form> 
+            <div>
                 <input type="radio" onchange="m_l()" id="c1" value="Mercado_Livre" name = 'cliente' class="radio">Mercado Livre
                 <input type="radio" onchange="m_c()" id="c2" value="Centro_Alianca" name = 'cliente' class="radio">Centro das Alianças
                 <input type="radio" value="Outros"  id="c3" onchange="outros_p()" name = 'cliente' class="radio" >Outros: 
                 <input type="text" id="outros"  name="txtcliente"  placeholder="Cliente...">
-            </form>
+            </div>
         </div>
         <div id="data">
             20/05/24
         </div>
         <div id="pedido_input">
-            <form>
+            <div>
                 <div id="numeracao_div">
                     Número do Pedido: <select id="n_p" class="pedido" >
                             <option value='N'  id="Nenhum" name="Pedido" >N</option>
@@ -105,7 +105,7 @@
                     <textarea id="descricao_P" class="descricao" placeholder="Descrição do Pedido..."  ></textarea>
                     <textarea id="descricao_A" class="descricao" placeholder="Descrição da Alianças..."  ></textarea>
                 </div>
-            </form>
+            </div>
            
             <div id="imagem_p" >
                 <input type="file"  src="#" onclick="img_modelo()" id="uploadimg">

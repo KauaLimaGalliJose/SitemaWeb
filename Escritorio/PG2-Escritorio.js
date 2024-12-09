@@ -16,6 +16,13 @@ var feminina;
 var masculina;
 var descricao_cliente;
 
+function cancelarformulario(formulario){
+
+    formulario.addEventListener("submit", function(event) {
+        event.preventDefault(); // Cancela o envio do formulário
+      });
+}
+
 
 function outros_p(){
     document.getElementById('outros').style.visibility = 'visible';
@@ -99,6 +106,7 @@ function check_unidade() {
     
 
 function  verificar(){
+    const form = document.getElementById("formulario1");
     let preview = document.getElementById('modelo2');
     let pedido_mercado = document.getElementById('nome_m').value;
     let respostas = document.getElementById('numeracao_m').value;
@@ -125,8 +133,7 @@ function  verificar(){
     let somaDataAtual_Input = varcharMesInput + varcharDiaInput;
     let somaDataInputNumber = Number(somaDataAtual_Input);
 // ▲▲▲▲ Essa pate foi uma conta que eu fiz para falidar a data atual e não colocar as datas anteriores no pedido ------
-do{
-    let valido = true;
+
 
     // Verifica se cada checkbox está marcado
     let c1 = cliente1.checked;
@@ -140,7 +147,8 @@ do{
         alert('Selecione a opção Mercado Livre - Centro das Alianças ou Outros');
         document.getElementById('tipo_pedido').style.borderColor = 'red';
         document.getElementById('cabecalho').style.borderBottomColor = 'red';
-        valido = false;
+        cancelarformulario(form)
+        return;
     }
     else{
         document.getElementById('tipo_pedido').style.borderColor = 'black';
@@ -149,12 +157,14 @@ do{
    // Verifica se um P ,PG ou PE está selecionado
     if(c1 && select_N.selected){
         alert('Selecione os P');
-        valido = false;
+        cancelarformulario(form)
+        return;
     }
     if(c1 && pedido_mercado.trim() === ''){
         document.getElementById('nome_m').style.borderColor = 'red';
         alert('Nome do Pedido');
-        valido = false;
+        cancelarformulario(form)
+        return;
     }
     else{
         document.getElementById('nome_m').style.borderColor = 'black';
@@ -165,7 +175,8 @@ do{
         alert('Numeração Masculina incorreta');
         
         document.getElementById('numeracao_m').style.borderColor = 'red';    
-        valido = false;
+        cancelarformulario(form)
+        return;
     }
     else{
         document.getElementById('numeracao_m').style.borderColor = 'black';
@@ -176,7 +187,8 @@ do{
         alert('Numeração Feminina incorreta');
         
         document.getElementById('numeracao_f').style.borderColor = 'red';
-        valido = false;
+        cancelarformulario(form)
+        return;
     }
     else{
         document.getElementById('numeracao_f').style.borderColor = 'black';
@@ -186,7 +198,8 @@ do{
     if(descricao.trim() === ''){
         document.getElementById('descricao_P').style.borderColor = 'red';
         alert('Descrição incompleta(Pedido)');
-        valido = false;
+        cancelarformulario(form)
+        return;
     }
     else{
         document.getElementById('descricao_P').style.borderColor = 'black';
@@ -197,7 +210,9 @@ do{
         alert('Sem Imagem')
         document.getElementById('modelo').style.borderColor = 'red';
         document.getElementById('modelo_rainha').style.borderColor = 'red';
-        valido = false;
+        cancelarformulario(form)
+        return;
+
     }else{
         document.getElementById('modelo').style.borderColor = 'black';
         document.getElementById('modelo_rainha').style.borderColor = 'black';
@@ -206,7 +221,8 @@ do{
     if( somaDataInputNumber < somaDataAtualNumber ){
         alert('O Dia ou Mes de Entrega está errado')
         document.getElementById('entrega').style.borderColor = 'red'; 
-        valido = false;
+        cancelarformulario(form)
+        return;
     }
     else{
         ano_input = anoAtual;
@@ -215,16 +231,12 @@ do{
     }
     if(dataInput.length == 0){
         dataFinal = formatDate(today);
-    }
-
-    if(valido === true){
-        enviar.addEventListener('submit')
-        break
-    }
+    } 
+        contador_pedidos()
+        generate()
+        
     console.log("Soma Data Atual: " + somaDataAtualNumber)
     console.log("Soma Data Input: " + somaDataInputNumber)
-}while(valido !== true);
-
 }
 
 function limpar(){
