@@ -8,8 +8,7 @@
 <body>
 Ou 
 <?php
-var_dump($_POST);
-print('Enviado') ;
+
 
 ?>
 </body>

@@ -11,8 +11,6 @@ setInterval(atualizarRelogio, 1000);
 atualizarRelogio(); // Chama a função uma vez para não esperar 1 segundo inicial
 
 
-
-
 function abrir(){
  const config = document.getElementById('div_config');
 

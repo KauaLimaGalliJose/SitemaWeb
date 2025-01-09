@@ -84,7 +84,7 @@ function img_modelo(){
             reader.readAsDataURL(file); // Lê o arquivo como uma URL de dados
         }
     });
-}
+}   
 function check_unidade() {
     var check = document.getElementById('umpe');
 
@@ -125,7 +125,7 @@ function  verificar(){
     let somaDataAtual_Input = varcharMesInput + varcharDiaInput;
     let somaDataInputNumber = Number(somaDataAtual_Input);
 // ▲▲▲▲ Essa pate foi uma conta que eu fiz para falidar a data atual e não colocar as datas anteriores no pedido ------
-do{
+
     let valido = true;
 
     // Verifica se cada checkbox está marcado
@@ -217,13 +217,14 @@ do{
         dataFinal = formatDate(today);
     }
 
-    if(valido === true){
-        break
-    }
     console.log("Soma Data Atual: " + somaDataAtualNumber)
     console.log("Soma Data Input: " + somaDataInputNumber)
-}while(valido !== true);
-
+    
+    if(valido === true){
+        return true;
+    }else{
+        return false;
+    }
 }
 
 function limpar(){
