@@ -56,5 +56,6 @@ export function limpar(){
     document.getElementById('nome_p').value = '';  
     document.getElementById('modelo2').style.display = 'none';
     document.getElementById('modelo_rainha').style.display = 'block';
+    document.getElementById('uploadimg').src = '#';
 }
 
