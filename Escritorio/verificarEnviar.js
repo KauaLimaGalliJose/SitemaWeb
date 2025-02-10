@@ -20,7 +20,7 @@ function borderBlack(id) {
 }
 
 // Função para verificar os inputs
-export function verificar() {
+function verificar() {
     let valido = true;
 
     if (cliente1.checked || cliente2.checked || cliente3.checked) {
@@ -29,7 +29,6 @@ export function verificar() {
     } else {
         document.getElementById("cabecalho").style.borderBottomColor = 'red';
         borderRed("tipo_pedido");
-        console.log('Erro: Nenhum cliente selecionado.');
         valido = false;
     }
     if(cliente1.checked && select_N.selected){

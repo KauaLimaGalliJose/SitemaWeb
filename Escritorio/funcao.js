@@ -7,7 +7,6 @@ export function voltar(contador_P, contador_Pg, contador_Pe) {
 
     if (p.selected) {
         contador_P--;
-        console.log(p);
         document.getElementById('P1').innerHTML = "P" + contador_P;
     }
     if (pg.selected) {
@@ -30,7 +29,6 @@ export function avancar(contador_P, contador_Pg, contador_Pe) {
 
     if (p.selected) {
         contador_P++;
-        console.log(p);
         document.getElementById('P1').innerHTML = "P" + contador_P;
     }
     if (pg.selected) {
@@ -59,3 +57,4 @@ export function limpar(){
     document.getElementById('modelo2').style.display = 'none';
     document.getElementById('modelo_rainha').style.display = 'block';
 }
+
