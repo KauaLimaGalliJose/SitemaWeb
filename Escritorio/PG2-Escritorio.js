@@ -12,8 +12,8 @@ let  select_2 = select.options[3];
 //Outras variaveis
 var sei;
 let dataFinal; //data que aparecerá no documento 
-var feminina;
-var masculina;
+var feminlina;
+var mascuina;
 var descricao_cliente;
 
 
@@ -221,6 +221,8 @@ function  verificar(){
     console.log("Soma Data Input: " + somaDataInputNumber)
     
     if(valido === true){
+        generate()
+        limpar()
         return true;
     }else{
         return false;
@@ -240,7 +242,6 @@ function limpar(){
     document.getElementById('nome_p').value = '';
 }
 
-
 function grav_e(){
     let grav = document.getElementById('gravacao_externa');
 
@@ -256,6 +257,7 @@ let p_contador = 0; // Variável global para manter o contador
 let pg_contador = 0;
 let pe_contador = 0;
 
+//Serve para acrecentar P PG PE
 function contador_pedidos() {
 
     while(select_0.selected){
@@ -282,7 +284,6 @@ function contador_pedidos() {
         break
     }
 }
-
 // --------------------------------------Seta do Menu serve para voltar o contador P,PG,PE
 function voltar(){
     if (select_0.selected) {
@@ -297,7 +298,6 @@ function voltar(){
     }
 }
 // --------------------------------------Seta do Menu serve para avançar o contador P,PG,PE
-
 function avancar(){
     if (select_0.selected) {
         p_contador++;

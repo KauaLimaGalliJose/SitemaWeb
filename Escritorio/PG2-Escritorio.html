@@ -6,24 +6,24 @@
     <link rel="stylesheet" href="PG2-Escritorio.css">
     <script src="https://unpkg.com/docx@7.1.0/build/index.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js"></script>
-    <script  src="PG2-Escritorio.js" defer></script>
+    <script  src="main.js" type="module" defer></script>
     <title>Escritório</title>
 </head>
 <body>
     <main>
-    <form action="PG2-Escritorio-1.php" method="get" onsubmit="return verificar() ">
+    <form id="formulario" method="post" action="PG2_Escritorio1.php" >
         <header>
     <div id="cabecalho">
         <div id="casa">
-            <button type="button" value="" onclick="voltar()" class="botao" >
+            <button type="button" value=""  class="botao" >
             <a href="../index.html"><img class="itens" src="casa.png"></a>
             </button>
 
-            <button type="button" id="seta_esquerda" value="" onclick="voltar()" class="botao" >
+            <button type="button" id="seta_esquerda" value="" class="botao" >
                 <img class="seta" src="angulo-esquerdo.png">
             </button>
 
-            <button type="button" id="seta_direita" value="" onclick="avancar()"  class="botao" >
+            <button type="button" id="seta_direita" value="" class="botao" >
                 <img class="seta" src="angulo-direito.png">
             </button>
             
@@ -31,8 +31,9 @@
         <div id="ferramentas">
             <img class="itens" src="editar.png">
 
-
+            <button type="button" id="pasta_aberta" value="" class="botao">
             <img class="itens" src="pasta-aberta.png">
+            </button>
             <img class="itens" src="upload-de-pasta.png">
             <img class="itens" src="download-de-pasta.png">
 
@@ -40,13 +41,13 @@
                 <a href="Estoque/Estoque_Pagina_Inicial.html"><img class="itens" src="aliancas-de-casamento.png"></a>
             </button>
 
-            <button type="reset" id="limpar" value="" onclick="limpar()" class="botao">
+            <button type="reset" id="limpar" value="" class="botao">
                 <img class="itens" src="lixeira.png">
             </button>
         </div>
         <div id="enviar">
 
-            <button id="btEnviar" type="submit" value="enviar" >
+            <button id="btEnviar" type="submit"  value="enviar" >
                     <div class="svg-wrapper-1">
                       <div class="svg-wrapper">
                         <svg
@@ -70,9 +71,9 @@
 </header>
         <div id="tipo_pedido">
             <form> 
-                <input type="radio" onchange="m_l()" id="c1" value="Mercado_Livre" name = 'cliente' class="radio">Mercado Livre
-                <input type="radio" onchange="m_c()" id="c2" value="Centro_Alianca" name = 'cliente' class="radio">Centro das Alianças
-                <input type="radio" value="Outros"  id="c3" onchange="outros_p()" name = 'cliente' class="radio" >Outros: 
+                <input type="radio" onchange="" id="c1" value="Mercado_Livre" name = 'cliente' class="radio">Mercado Livre
+                <input type="radio" onchange="" id="c2" value="Centro_Alianca" name = 'cliente' class="radio">Centro das Alianças
+                <input type="radio" value="Outros"  id="c3" name = 'cliente' class="radio" >Outros: 
                 <input type="text" id="outros"  name="txtcliente"  placeholder="Cliente...">
             </form>
         </div>
@@ -99,7 +100,7 @@
                     F:<input type="number" id="numeracao_f" value=''   placeholder="F" >
                    </div>
                 <div id="unidade">
-                    Unidade: <input type="checkbox" id="umpe" onclick="check_unidade()" name = 'pé' class="radio" >
+                    Unidade: <input type="checkbox" id="checkboxFeminina"  name = 'pé' class="radio" >
                 </div>
                 <div id="descricao_div">
                     <textarea id="descricao_P" class="descricao" placeholder="Descrição do Pedido..."  ></textarea>
@@ -108,7 +109,7 @@
             </form>
            
             <div id="imagem_p" >
-                <input type="file"  src="#" onclick="img_modelo()" id="uploadimg">
+                <input type="file" src="#" id="uploadimg">
                 <div id="modelo">
                 <img id="modelo_rainha" src="rj.png.webp" alt="rainha">
                 <img id="modelo2" src="#" alt="Pré-visualização da Imagem" style="display: none;">
@@ -132,7 +133,7 @@
                 </div>
         </div>
         <footer>
-            <input type="checkbox" id="gravacao_externa" onclick="grav_e()" name = 'gravacao_externa' class="radio" >Gravação Externa
+            <input type="checkbox" id="gravacao_externa"  name = 'gravacao_externa' class="radio" >Gravação Externa
             <div class="div_footer">
                 <input type="radio" name = 'pedra' class="radio">Par com pedra
             <input type="radio"  name = 'pedra' class="radio" >Sem Pedra 

@@ -149,7 +149,7 @@ header{
     visibility: hidden; /* O elemento ficará invisível, mas ainda ocupará espaço */
     width: 200px;
     height: 37px;
-    margin-top: 0.5%;
+    margin-top: 0%;
     padding-left: 20px;
     font-size: 75%;
     font-weight: 600;
@@ -195,6 +195,7 @@ header{
     font-weight: 600;
     font-family: cursive;
     text-align: center;
+    border:  solid black 3px;
     border-radius: 2px;
     text-align: justify;
     
