@@ -77,14 +77,7 @@ function verificar() {
         borderBlack('nome_m')
     }
     //--------------------------------------------------Centro e Outros
-    if(cliente2.checked && pedido_outros.trim() === ''){
-        borderRed('nome_p')
-        valido = false;
-    }
-    else{
-        borderBlack('nome_p')
-    }
-    if(cliente3.checked && pedido_outros.trim() === ''){
+    if(cliente2.checked || cliente3.checked && pedido_outros.trim() === ''){
         borderRed('nome_p')
         valido = false;
     }
