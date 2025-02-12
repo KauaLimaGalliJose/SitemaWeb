@@ -132,7 +132,7 @@ function verificar() {
 export function enviar(){
 formulario.addEventListener("submit", function(event) {
     event.preventDefault();
-    verificar(); 
+     
     if (chave === true) {
         const dadosInputs = new FormData(this);
 

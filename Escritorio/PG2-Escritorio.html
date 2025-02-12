@@ -11,7 +11,7 @@
 </head>
 <body>
     <main>
-    <form id="formulario" >
+    <form id="formulario" method="post" action="PG2_Escritorio1.php" >
         <header>
     <div id="cabecalho">
         <div id="casa">
@@ -83,14 +83,15 @@
         <div id="pedido_input">
             <form>
                 <div id="numeracao_div">
-                    Número do Pedido: <select id="n_p" class="pedido" >
-                            <option value='N'  id="Nenhum" name="Pedido" >N</option>
+                    <label for="n_p">Número do Pedido:</label>
+                      <select id="n_p" name="n" class="pedido" >
+                            <option value='N'  id="Nenhum" name="" >N</option>
 
-                            <option value='P'  id="P1" name="Pedido" >P1</option>
+                            <option value='P'  id="P1" name="P1" >P1</option>
                        
-                            <option value="PG" id="PG1" name="Pedido" >PG1</option>
+                            <option value="PG" id="PG1" name="" >PG1</option>
                        
-                            <option value="PE" id="PE1" name="Pedido" >PE1</option>
+                            <option value="PE" id="PE1" name="" >PE1</option>
                     </select>
                     <input type="text" id="nome_m" placeholder="Pedido..." >
                     <input type="text" id="nome_p" placeholder="Pedido..." >

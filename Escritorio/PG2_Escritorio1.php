@@ -14,5 +14,11 @@ if ($conn->connect_error) {
 }
 echo "Conectado com sucesso! com usuario =>" . $usuario;
 
+// Puxando dados
+if($_POST){
+$pedido = $_POST["P1"];
+echo($pedido);
+
+}
 
 ?>

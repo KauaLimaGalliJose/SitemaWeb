@@ -29,15 +29,20 @@ export function avancar(contador_P, contador_Pg, contador_Pe) {
 
     if (p.selected) {
         contador_P++;
-        document.getElementById('P1').innerHTML = "P" + contador_P;
+        var strcondador_P = 'P' + contador_P;
+        String(strcondador_P)
+        document.getElementById('P1').innerHTML = strcondador_P;
+        document.getElementById('P1').value = strcondador_P;
     }
     if (pg.selected) {
         contador_Pg++;
         document.getElementById('PG1').innerHTML = "PG" + contador_Pg;
+        
     }
     if (pe.selected) {
         contador_Pe++;
         document.getElementById('PE1').innerHTML = "PE" + contador_Pe;
+        
     }
 
     return { contador_P, contador_Pg, contador_Pe };
