@@ -26,6 +26,7 @@ function borderBlack(id) {
 function verificar() {
     let preview = document.getElementById('modelo2');
     let pedido_mercado = document.getElementById('nome_m').value;
+    let pedido_outros = document.getElementById('nome_p').value;
     let respostas = document.getElementById('numeracao_m').value;
     let respostas2 = document.getElementById('numeracao_f').value;
     let descricao = document.getElementById('descricao_P').value;
@@ -37,7 +38,6 @@ function verificar() {
     const data = diaMesAno();
     let [ano_input, mes_input, dia_input] = dataInput.split('-');
     let [dia,mes,ano] = data.split('/');
-    let anoAtual, dataFinal
 
     // data Atual
     let varcharDia = String(dia);
@@ -68,12 +68,28 @@ function verificar() {
     else{
         borderBlack('n_p')
     }
+    //----------------------------------------------Mercado Livre
     if(cliente1.checked && pedido_mercado.trim() === ''){
         borderRed('nome_m')
         valido = false;
     }
     else{
         borderBlack('nome_m')
+    }
+    //--------------------------------------------------Centro e Outros
+    if(cliente2.checked && pedido_outros.trim() === ''){
+        borderRed('nome_p')
+        valido = false;
+    }
+    else{
+        borderBlack('nome_p')
+    }
+    if(cliente3.checked && pedido_outros.trim() === ''){
+        borderRed('nome_p')
+        valido = false;
+    }
+    else{
+        borderBlack('nome_p')
     }
     //--------------------------------------Validação das numeração Masculina
     if((respostas3 <= 6) || (respostas3 >= 40) || isNaN(respostas3)){ // 'length' e para contar 
@@ -116,9 +132,6 @@ function verificar() {
     else{
         borderBlack('entrega')
     }
-
-    console.log("Soma Data Atual: " + somaDataAtualNumber)
-    console.log("Soma Data Input: " + somaDataInputNumber)
 
     chave = valido;
 }
