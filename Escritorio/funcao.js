@@ -29,10 +29,8 @@ export function avancar(contador_P, contador_Pg, contador_Pe) {
 
     if (p.selected) {
         contador_P++;
-        var strcondador_P = 'P' + contador_P;
-        String(strcondador_P)
-        document.getElementById('P1').innerHTML = strcondador_P;
-        document.getElementById('P1').value = strcondador_P;
+        document.getElementById('P1').innerHTML ='P' + contador_P;
+        document.getElementById('P1').value ='P' + contador_P;
     }
     if (pg.selected) {
         contador_Pg++;
