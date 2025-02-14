@@ -21,12 +21,24 @@ header{
     display: flex;
     align-items: center;
     justify-content: center; /* Garante que os itens sejam distribuídos */
+    flex-direction: column;
     width: 100%;
-    height: 80px;
+    height: 120px;
     border: solid black 5px;
     border-bottom: solid rgb(0, 0, 0) 5px ;
     background-color: antiquewhite;
     overflow: auto; /* Garante que o menu não "quebre" */
+}
+#cabecalho_cima{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+#cabecalho_baixo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
 }
 
 .itens{
@@ -72,7 +84,7 @@ header{
 }
 /*-----------------Enviar---------------------------------------*/
 #btEnviar {
-    font-family: inherit;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 20px;
     background: rgb(253, 77, 54);
     color: rgb(0, 0, 0);
@@ -130,9 +142,6 @@ header{
     justify-content: center;
     align-items: center;
     font-size: 180%;
-    border-bottom: solid black 5px;
-    border-left: solid black 5px;
-    border-right: solid black 5px;
     background-color: antiquewhite;
     overflow: hidden; /* Garante que o menu não "quebre" */
     flex-direction: row;
@@ -160,6 +169,13 @@ header{
 }
 
 /*--------------- Pedido ---------------------*/
+#direita_input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 #data{
     display: flex;
     justify-content: flex-end;
@@ -168,6 +184,7 @@ header{
     font-size: 370%;
     font-weight: 700;
 }
+
 
 #pedido_input{
     display: flex;
@@ -178,11 +195,14 @@ header{
     font-size: 200%;
     font-weight: 600;
 }
+/* ------ Parte Esquerda ------*/
+
 #numeracao_div{
     width: 100%;
     height: 50px;
     margin-bottom: 30px;
     margin-left: 10px;
+    font-size: 80%;
 }
 
 #n_p{
@@ -205,7 +225,7 @@ header{
     display: flex;
     position: relative; /* Faz com que o elemento seja posicionado em relação ao contêiner */
     bottom:40px;  /* Distância do topo */
-    left: 49%; /* Distância da esquerda */
+    left: 42%; /* Distância da esquerda */
     visibility: hidden;
     width: 40%;
     height: 37px;
@@ -235,11 +255,15 @@ header{
 }
 #numeracao{
     margin-left: 10px;
+    width: 100%;
+    font-size: 80%;
 }
 #unidade{
 display: flex;
 justify-content: flex-start;
 align-items: center;
+font-size: 80%;
+width: 100%;
 margin-top: 30px;
 margin-left: 10px;
 }
@@ -273,6 +297,7 @@ margin-left: 10px;
     justify-content: center;
     flex-direction: column;
     margin: 5px;
+    width: 90%;
     
 }
 .descricao{
@@ -333,7 +358,7 @@ margin-left: 10px;
 }
 
 
-/* ------ Parte direita ------*/
+/* ------ Parte Esquerda ------*/
 
    
 
@@ -344,7 +369,6 @@ margin-left: 10px;
     flex-direction: column;
     margin: 30px;
     width: 500px;
-    margin-bottom: 20px;
    
 }
 #dia_horas{

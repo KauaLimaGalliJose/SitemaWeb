@@ -12,14 +12,16 @@ $conn = new mysqli($servidor, $usuario, $senha, $banco, $porta);
 if ($conn->connect_error) {
     die("Falha na conexão: " . $conn->connect_error);
 }
-echo "Conectado com sucesso! com usuario =>" . $usuario .PHP_EOL;
-echo PHP_EOL.'---------- Erros de dados ----------' .PHP_EOL;
+echo "Conectado com sucesso! com usuario => " . $usuario .PHP_EOL;
+echo PHP_EOL.'---------- DADOS ----------' .PHP_EOL.PHP_EOL;
 
 // Puxando dados
-if($_POST){
-$pedido = $_POST["P1"];
-echo($pedido);
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
 
+   
+    
 }
+
 
 ?>

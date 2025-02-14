@@ -36,8 +36,7 @@ export function check_unidade(){
     // Verifica se o checkbox está marcado
     if (check.checked) {
         document.getElementById('numeracao_f').style.visibility = 'hidden';
-        document.getElementById('numeracao_f').value = 1;
-        console.log(document.getElementById('numeracao_f').value)
+        document.getElementById('numeracao_f').value = 40;
     } 
     else{
         document.getElementById('numeracao_f').style.visibility = 'visible';

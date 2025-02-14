@@ -2,6 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="../coroa.png" type="image/x-icon">
     <link rel="stylesheet" href="PG2-Escritorio.css">
     <script src="https://unpkg.com/docx@7.1.0/build/index.js"></script>
@@ -10,128 +11,127 @@
     <title>Escritório</title>
 </head>
 <body>
-    <main>
-    <form id="formulario" method="post" action="PG2_Escritorio1.php" >
-        <header>
-    <div id="cabecalho">
-        <div id="casa">
-            <button type="button" value=""  class="botao" >
-            <a href="../index.html"><img class="itens" src="casa.png"></a>
-            </button>
-
-            <button type="button" id="seta_esquerda" value="" class="botao" >
-                <img class="seta" src="angulo-esquerdo.png">
-            </button>
-
-            <button type="button" id="seta_direita" value="" class="botao" >
-                <img class="seta" src="angulo-direito.png">
-            </button>
-            
-        </div>
-        <div id="ferramentas">
-            <img class="itens" src="editar.png">
-
-            <button type="button" id="pasta_aberta" value="" class="botao">
-            <img class="itens" src="pasta-aberta.png">
-            </button>
-            <img class="itens" src="upload-de-pasta.png">
-            <img class="itens" src="download-de-pasta.png">
-
-            <button type="button" value="" class="botao">
-                <a href="Estoque/Estoque_Pagina_Inicial.html"><img class="itens" src="aliancas-de-casamento.png"></a>
-            </button>
-
-            <button type="reset" id="limpar" value="" class="botao">
-                <img class="itens" src="lixeira.png">
-            </button>
-        </div>
-        <div id="enviar">
-
-            <button id="btEnviar" type="submit"  value="enviar" >
-                    <div class="svg-wrapper-1">
-                      <div class="svg-wrapper">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          width="24"
-                          height="24"
-                        >
-                          <path fill="none" d="M0 0h24v24H0z"></path>
-                          <path
-                            fill="currentColor"
-                            d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
-                          ></path>
-                        </svg>
-                      </div>
-                    </div>
-                    <span>Enviar</span>
-            </button>
-        </div>
-    </div>
-</header>
-        <div id="tipo_pedido">
-            <form> 
-                <input type="radio" onchange="" id="c1" value="Mercado_Livre" name = 'cliente' class="radio">Mercado Livre
-                <input type="radio" onchange="" id="c2" value="Centro_Alianca" name = 'cliente' class="radio">Centro das Alianças
-                <input type="radio" value="Outros"  id="c3" name = 'cliente' class="radio" >Outros: 
-                <input type="text" id="outros"  name="txtcliente"  placeholder="Cliente...">
-            </form>
-        </div>
-        <div id="data">
-            20/05/24
-        </div>
-        <div id="pedido_input">
-            <form>
-                <div id="numeracao_div">
-                    <label for="n_p">Número do Pedido:</label>
-                      <select id="n_p" name="n" class="pedido" >
-                            <option value='N'  id="Nenhum" name="" >N</option>
-
-                            <option value='P'  id="P1" name="P1" >P1</option>
-                       
-                            <option value="PG" id="PG1" name="" >PG1</option>
-                       
-                            <option value="PE" id="PE1" name="" >PE1</option>
-                    </select>
-                    <input type="text" id="nome_m" placeholder="Pedido..." >
-                    <input type="text" id="nome_p" placeholder="Pedido..." >
+   <main>
+    <form id="formulario">
+        <div id="cabecalho">
+            <div id="cabecalho_cima">
+                <div id="casa">
+                    <button type="button" value=""  class="botao" >
+                    <a href="../index.html"><img class="itens" src="casa.png"></a>
+                    </button>
+        
+                    <button type="button" id="seta_esquerda" value="" class="botao" >
+                        <img class="seta" src="angulo-esquerdo.png">
+                    </button>
+        
+                    <button type="button" id="seta_direita" value="" class="botao" >
+                        <img class="seta" src="angulo-direito.png">
+                    </button>
                 </div>
-                <div id="numeracao">
-                    Númeração M:<input type="number" id="numeracao_m" value='' placeholder="M" >
-                    F:<input type="number" id="numeracao_f" value=''   placeholder="F" >
-                   </div>
-                <div id="unidade">
-                    Unidade: <input type="checkbox" id="checkboxFeminina"  name = 'pé' class="radio" >
+                <div id="ferramentas">
+                    <img class="itens" src="editar.png">
+        
+                    <button type="button" id="pasta_aberta" value="" class="botao">
+                    <img class="itens" src="pasta-aberta.png">
+                    </button>
+                    <img class="itens" src="upload-de-pasta.png">
+                    <img class="itens" src="download-de-pasta.png">
+        
+                    <button type="button" value="" class="botao">
+                        <a href="Estoque/Estoque_Pagina_Inicial.html"><img class="itens" src="aliancas-de-casamento.png"></a>
+                    </button>
+        
+                    <button type="reset" id="limpar" value="" class="botao">
+                        <img class="itens" src="lixeira.png">
+                    </button>
                 </div>
-                <div id="descricao_div">
-                    <textarea id="descricao_P" class="descricao" placeholder="Descrição do Pedido..."  ></textarea>
-                    <textarea id="descricao_A" class="descricao" placeholder="Descrição da Alianças..."  ></textarea>
-                </div>
-            </form>
-           
-            <div id="imagem_p" >
-                <input type="file" src="#" id="uploadimg">
-                <div id="modelo">
-                <img id="modelo_rainha" src="rj.png.webp" alt="rainha">
-                <img id="modelo2" src="#" alt="Pré-visualização da Imagem" style="display: none;">
+                <div id="enviar">
+                    <button id="btEnviar" type="submit"  value="enviar" >
+                            <div class="svg-wrapper-1">
+                              <div class="svg-wrapper">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 24 24"
+                                  width="24"
+                                  height="24"
+                                >
+                                  <path fill="none" d="M0 0h24v24H0z"></path>
+                                  <path
+                                    fill="currentColor"
+                                    d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                                  ></path>
+                                </svg>
+                              </div>
+                            </div>
+                            <span>Enviar</span>
+                    </button>
                 </div>
             </div>
-                <div id="esquerda_input">
-                    <div id="dia_horas">
-                        <div id="Div_entrega">
-                            Entrega:<input name="entrega" id="entrega" type="date">
-                        </div>
-                        <select  name="horaPedido" id="horaPedido">
-                            <option id="Urgente" >Urgente</option>
-                            <option id="Antes_12:00" >Até 14:00</option>
-                            <option id="Depois_13:00" >Até 17:00</option>
-                        </select>
-                    </div>
-                    <div id="grav_externa">
-                        <textarea name="gravacao_exter" class="grav_input" id="grav_externaInput" placeholder="Gravações Externa..."></textarea>   
-                    </div>
-                <textarea name="gravacao_inter" id="grav_m" class="grav_input" placeholder="Gravações do Pedido..."></textarea>   
+            <div id="cabecalho_baixo">
+                <div id="tipo_pedido">
+                        <input type="radio" onchange="" id="c1" value="Mercado_Livre" name = 'cliente' class="radio">Mercado Livre
+                        <input type="radio" onchange="" id="c2" value="Centro_Alianca" name = 'cliente' class="radio">Centro das Alianças
+                        <input type="radio" value="Outros"  id="c3" name = 'cliente' class="radio" >Outros: 
+                        <input type="text" id="outros"  name="txtcliente"  placeholder="Cliente...">
                 </div>
+            </div>
+        </div>
+        <div id="conteudo">
+            <div id="data">
+                20/05/24
+            </div>
+            <div id="pedido_input">
+                <div id="direita_input">
+                    <div id="numeracao_div">
+                        Número do Pedido:
+                          <select id="n_p" name="n" class="pedido" >
+                                <option value='N'  id="Nenhum" >N</option>
+    
+                                <option value='P'  id="P1" >P1</option>
+                           
+                                <option value="PG" id="PG1" >PG1</option>
+                           
+                                <option value="PE" id="PE1" >PE1</option>
+                        </select>
+                        <input type="text" id="nome_m" placeholder="Pedido..." >
+                        <input type="text" id="nome_p" placeholder="Pedido..." >
+                    </div>
+                    <div id="numeracao">
+                        Númeração M:<input type="number" id="numeracao_m" value='' placeholder="M" >
+                        F:<input type="number" id="numeracao_f" value=''   placeholder="F" >
+                       </div>
+                    <div id="unidade">
+                        Unidade: <input type="checkbox" id="checkboxFeminina"  name = 'pé' class="radio" >
+                    </div>
+                    <div id="descricao_div">
+                        <textarea id="descricao_P" class="descricao" placeholder="Descrição do Pedido..."  ></textarea>
+                        <textarea id="descricao_A" class="descricao" placeholder="Descrição da Alianças..."  ></textarea>
+                    </div>
+                </div>
+                    <div id="imagem_p" >
+                        <input type="file" src="#" id="uploadimg">
+                        <div id="modelo">
+                        <img id="modelo_rainha" src="rj.png.webp" alt="rainha">
+                        <img id="modelo2" src="#" alt="Pré-visualização da Imagem" style="display: none;">
+                        </div>
+                    </div>
+                        <div id="esquerda_input">
+                            <div id="dia_horas">
+                                <div id="Div_entrega">
+                                    Entrega:<input name="entrega" id="entrega" type="date">
+                                </div>
+                                <select  name="horaPedido" id="horaPedido">
+                                    <option id="Urgente" >Urgente</option>
+                                    <option id="Antes_12:00" >Até 14:00</option>
+                                    <option id="Depois_13:00" >Até 17:00</option>
+                                </select>
+                            </div>
+                            <div id="grav_externa">
+                                <textarea name="gravacao_exter" class="grav_input" id="grav_externaInput" placeholder="Gravações Externa..."></textarea>   
+                            </div>
+                            <textarea name="gravacao_inter" id="grav_m" class="grav_input" placeholder="Gravações do Pedido..."></textarea>   
+                        </div>
+            </div>
         </div>
         <footer>
             <input type="checkbox" id="gravacao_externa"  name = 'gravacao_externa' class="radio" >Gravação Externa
@@ -145,6 +145,6 @@
             </div>
         </footer>
     </form>
-    </main>
+   </main>
 </body>
 </html>

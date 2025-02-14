@@ -1,18 +1,15 @@
 import { diaMesAno } from "./dataHora.js";
+
 //Variaveis do P , PG e PE
 const select = document.getElementById('n_p');
 let  select_N = select.options[0];
-let  select_0 = select.options[1];
-let  select_1 = select.options[2];
-let  select_2 = select.options[3];
+
 // Variáveis
-
-
 const formulario = document.getElementById("formulario");
 const cliente1 = document.getElementById('c1');
 const cliente2 = document.getElementById('c2');
 const cliente3 = document.getElementById('c3');
-let chave = true;
+let chave = null;
 
 // Função para mudar a cor da borda
 function borderRed(id) {
@@ -23,7 +20,7 @@ function borderBlack(id) {
 }
 
 // Função para verificar os inputs
-function verificar() {
+export function verificar() {
     let preview = document.getElementById('modelo2');
     let pedido_mercado = document.getElementById('nome_m').value;
     let pedido_outros = document.getElementById('nome_p').value;
@@ -85,7 +82,7 @@ function verificar() {
         borderBlack('nome_p')
     }
     //--------------------------------------Validação das numeração Masculina
-    if((respostas3 <= 6) || (respostas3 >= 40) || isNaN(respostas3)){ // 'length' e para contar 
+    if((respostas3 <= 6) || (respostas3 >= 40) || isNaN(respostas3)){ 
          borderRed('numeracao_m')    
         valido = false;
     }
@@ -93,7 +90,7 @@ function verificar() {
         borderBlack('numeracao_m') 
     }
 // --------------------------------------Validação das numeração Feminina
-    if((respostas4 <= 6) || (respostas4 >= 40) || isNaN(respostas4)){ // 'length' e para contar 
+    if((respostas4 <= 6) || (respostas4 >= 40) || isNaN(respostas4)){ 
         borderRed('numeracao_f')
         valido = false;
     }
@@ -118,7 +115,7 @@ function verificar() {
         borderBlack('modelo_rainha')
     }
     // ------------------------------------------------------Data Personalizada
-    if( somaDataInputNumber < somaDataAtualNumber || dataInput.length == 0 ){
+    if( somaDataInputNumber < somaDataAtualNumber || dataInput.length == 0 || ano_input !== ano ){
         borderRed('entrega')
         valido = false;
     }
@@ -127,27 +124,43 @@ function verificar() {
     }
 
     chave = valido;
+
+    if(chave == true){
+        return true
+    }
+    else{
+        return false
+    }
 }
 
 export function enviar(){
-formulario.addEventListener("submit", function(event) {
-    event.preventDefault();
-     
-    if (chave === true) {
-        const dadosInputs = new FormData(this);
+    formulario.addEventListener("submit", function(event) {
+        event.preventDefault();
+        verificar()
+        
+        if (chave === true) {   
+            const dadosInputs = new FormData(this);
 
-        fetch("./PG2_Escritorio1.php", { 
-            method: "POST",
-            body: dadosInputs
-        })
-        .then(response => response.text()) 
-        .then(data => {
-            console.log("Resposta do servidor: " + data);
-        })
-        .catch(error => console.error("Erro:", error));
-    } 
-    else {
-        console.log("Erro: Formulário inválido, não enviado.");
-    }
-});
+            fetch("./PG2_Escritorio1.php", { 
+                method: "POST",
+                body: dadosInputs
+            })
+            .then(response => response.text()) 
+            .then(data => {
+                console.log("Resposta do servidor: " + data);
+            })
+            .catch(error => console.error("Erro:", error));
+        } 
+        else {
+            console.log("Erro: Formulário inválido, não enviado.");
+        }
+    });
+  
+}
+
+export function naoenviar(){
+    document.querySelector("form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Impede o envio do formulário
+    });
+
 }
