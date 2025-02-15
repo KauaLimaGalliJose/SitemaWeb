@@ -1,6 +1,7 @@
 <?php
 include_once('conexao.php');
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Puxando dados
 $numeroPedido = $_POST['numeroPedido'];
 $dataEntrega = $_POST['dataEntrega'];
@@ -22,5 +23,5 @@ $idPedidos = $numeroPedido . $dataEntrega;
 $dados = mysqli_query($conn, 
 "INSERT TO pedidos(numeroPedido,cliente,nomePedido,numeracaoM,numeracaoF,descricaoPedido,descricaoAlinca,gravacaoInterna,gravacaoExterna) 
 values ($idPedidos,$cliente,$nomePedido,$m,$f,$descricao_Pedido,$descricao_Alianca,$gravacao_inter,$gravacao_exter)");
-
+}
 ?>
