@@ -74,7 +74,11 @@ export function verificar() {
         borderBlack('nome_m')
     }
     //--------------------------------------------------Centro e Outros
-    if(cliente2.checked || cliente3.checked && pedido_outros.trim() === ''){
+    if(cliente2.checked && pedido_outros.trim() === ''){
+        borderRed('nome_p')
+        valido = false;
+    }
+    else if(cliente3.checked && pedido_outros.trim() === '' ){
         borderRed('nome_p')
         valido = false;
     }
@@ -90,7 +94,7 @@ export function verificar() {
         borderBlack('numeracao_m') 
     }
 // --------------------------------------Validação das numeração Feminina
-    if((respostas4 <= 6) || (respostas4 >= 40) || isNaN(respostas4)){ 
+    if((respostas4 <= 6) || (respostas4 >= 41) || isNaN(respostas4)){
         borderRed('numeracao_f')
         valido = false;
     }
@@ -159,7 +163,7 @@ export function enviar(){
 }
 
 export function naoenviar(){
-    document.querySelector("form").addEventListener("submit", function(event) {
+    formulario.addEventListener("submit", function(event) {
         event.preventDefault(); // Impede o envio do formulário
     });
 

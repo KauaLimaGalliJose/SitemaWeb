@@ -1,27 +1,26 @@
 <?php
-$servidor = "localhost"; // IP do servidor MySQL
-$usuario = "root";
-$senha = "";
-$banco = "teste";
-$porta = 3316; // Porta do MySQL
-
-// Criar conexão
-$conn = new mysqli($servidor, $usuario, $senha, $banco, $porta);
-
-// Verificar conexão
-if ($conn->connect_error) {
-    die("Falha na conexão: " . $conn->connect_error);
-}
-echo "Conectado com sucesso! com usuario => " . $usuario .PHP_EOL;
-echo PHP_EOL.'---------- DADOS ----------' .PHP_EOL.PHP_EOL;
+include_once('conexao.php');
 
 // Puxando dados
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
+$numeroPedido = $_POST['numeroPedido'];
+$dataEntrega = $_POST['dataEntrega'];
+$cliente = $_POS['cliente'];
+$nomePedido = $_POST['nome_m'];
+$nomePedidoC = $_POST['nome_p'];
+$f = $_POST['f'];
+$m = $_POST['m'];
+$descricao_Pedido = $_POST['descricao_Pedido'];
+$descricao_Alianca = $_POST['descricao_Alianca'];
+$gravacao_exter = $_POST['gravacao_exter'];
+$gravacao_inter = $_POST['gravacao_inter'];
 
-   
-    
-}
+$idPedidos = $numeroPedido . $dataEntrega;
 
+
+// passando pro banco de dados
+
+$dados = mysqli_query($conn, 
+"INSERT TO pedidos(numeroPedido,cliente,nomePedido,numeracaoM,numeracaoF,descricaoPedido,descricaoAlinca,gravacaoInterna,gravacaoExterna) 
+values ($idPedidos,$cliente,$nomePedido,$m,$f,$descricao_Pedido,$descricao_Alianca,$gravacao_inter,$gravacao_exter)");
 
 ?>

@@ -84,7 +84,7 @@
                 <div id="direita_input">
                     <div id="numeracao_div">
                         Número do Pedido:
-                          <select id="n_p" name="n" class="pedido" >
+                          <select id="n_p" name="numeroPedido" class="pedido" >
                                 <option value='N'  id="Nenhum" >N</option>
     
                                 <option value='P'  id="P1" >P1</option>
@@ -93,19 +93,19 @@
                            
                                 <option value="PE" id="PE1" >PE1</option>
                         </select>
-                        <input type="text" id="nome_m" placeholder="Pedido..." >
-                        <input type="text" id="nome_p" placeholder="Pedido..." >
+                        <input type="text" id="nome_m" name="nome_m" placeholder="Pedido..." >
+                        <input type="text" id="nome_p" name="nome_p" placeholder="Pedido..." >
                     </div>
                     <div id="numeracao">
-                        Númeração M:<input type="number" id="numeracao_m" value='' placeholder="M" >
-                        F:<input type="number" id="numeracao_f" value=''   placeholder="F" >
+                        Númeração M:<input type="number" id="numeracao_m" value='' name="m" placeholder="M" >
+                        F:<input type="number" id="numeracao_f" value='' name="f"  placeholder="F" >
                        </div>
                     <div id="unidade">
                         Unidade: <input type="checkbox" id="checkboxFeminina"  name = 'pé' class="radio" >
                     </div>
                     <div id="descricao_div">
-                        <textarea id="descricao_P" class="descricao" placeholder="Descrição do Pedido..."  ></textarea>
-                        <textarea id="descricao_A" class="descricao" placeholder="Descrição da Alianças..."  ></textarea>
+                        <textarea id="descricao_Pedido" name="descricao_Pedido" class="descricao" placeholder="Descrição do Pedido..."  ></textarea>
+                        <textarea id="descricao_Alianca" name="descricao_Alianca" class="descricao" placeholder="Descrição da Alianças..."  ></textarea>
                     </div>
                 </div>
                     <div id="imagem_p" >
@@ -118,7 +118,7 @@
                         <div id="esquerda_input">
                             <div id="dia_horas">
                                 <div id="Div_entrega">
-                                    Entrega:<input name="entrega" id="entrega" type="date">
+                                    Entrega:<input id="entrega" name="dataEntrega" type="date">
                                 </div>
                                 <select  name="horaPedido" id="horaPedido">
                                     <option id="Urgente" >Urgente</option>

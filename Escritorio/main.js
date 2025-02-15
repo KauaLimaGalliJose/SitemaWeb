@@ -2,7 +2,7 @@
 import { voltar, avancar, limpar } from "./funcao.js";
 import { radioCabecalho, check_unidade, gravacaoExterna } from "./radiosChitobox.js";
 import img_modelo  from "./imagemInput.js";
-import { dataCabecalho } from "./dataHora.js";
+import { dataCabecalho, dataEntrega} from "./dataHora.js";
 import { enviar, naoenviar, verificar } from "./verificarEnviar.js";
 
 //Buttons
@@ -14,9 +14,9 @@ const enviarBt = document.getElementById('btEnviar');
 
 //Global Variaveis
 export let contador = { 
-contador_P:1,
-contador_Pg:1, 
-contador_Pe:1
+contador_P:0,
+contador_Pg:0, 
+contador_Pe:0
 }
 
 //Funções com Buttons
@@ -54,3 +54,4 @@ enviarBt.addEventListener('click',function(){
 
 //Funções para ser iniciadas
 dataCabecalho()
+dataEntrega()

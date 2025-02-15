@@ -29,18 +29,21 @@ export function avancar(contador_P, contador_Pg, contador_Pe) {
 
     if (p.selected) {
         contador_P++;
-        document.getElementById('P1').innerHTML ='P' + contador_P;
+        let contadordisplayP = contador_P +1
+        document.getElementById('P1').innerHTML ='P' + contadordisplayP;
         document.getElementById('P1').value ='P' + contador_P;
     }
     if (pg.selected) {
         contador_Pg++;
+        let contadordisplayPg = contador_Pg +1
         document.getElementById('PG1').innerHTML = "PG" + contador_Pg;
-        
+        document.getElementById('PG1').value ='PG' + contadordisplayPg;
     }
     if (pe.selected) {
         contador_Pe++;
+        let contadordisplayPe = contador_Pe +1
         document.getElementById('PE1').innerHTML = "PE" + contador_Pe;
-        
+        ocument.getElementById('PE1').value ='PE' + contadordisplayPe;
     }
 
     return { contador_P, contador_Pg, contador_Pe };
