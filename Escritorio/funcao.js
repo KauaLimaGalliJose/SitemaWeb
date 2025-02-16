@@ -36,14 +36,14 @@ export function avancar(contador_P, contador_Pg, contador_Pe) {
     if (pg.selected) {
         contador_Pg++;
         let contadordisplayPg = contador_Pg +1
-        document.getElementById('PG1').innerHTML = "PG" + contador_Pg;
-        document.getElementById('PG1').value ='PG' + contadordisplayPg;
+        document.getElementById('PG1').innerHTML = "PG" + contadordisplayPg ;
+        document.getElementById('PG1').value ='PG' + contador_Pg;
     }
     if (pe.selected) {
         contador_Pe++;
         let contadordisplayPe = contador_Pe +1
-        document.getElementById('PE1').innerHTML = "PE" + contador_Pe;
-        document.getElementById('PE1').value ='PE' + contadordisplayPe;
+        document.getElementById('PE1').innerHTML = "PE" +  contadordisplayPe;
+        document.getElementById('PE1').value ='PE' + contador_Pe;
     }
 
     return { contador_P, contador_Pg, contador_Pe };
