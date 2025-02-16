@@ -43,7 +43,7 @@ export function avancar(contador_P, contador_Pg, contador_Pe) {
         contador_Pe++;
         let contadordisplayPe = contador_Pe +1
         document.getElementById('PE1').innerHTML = "PE" + contador_Pe;
-        ocument.getElementById('PE1').value ='PE' + contadordisplayPe;
+        document.getElementById('PE1').value ='PE' + contadordisplayPe;
     }
 
     return { contador_P, contador_Pg, contador_Pe };
@@ -53,10 +53,10 @@ export function limpar(){
     document.getElementById('nome_m').value ='';
     document.getElementById('numeracao_m').value = '';
     document.getElementById('numeracao_f').value = '';
-    document.getElementById('descricao_P').value = '';
+    document.getElementById('descricao_Pedido').value = '';
     document.getElementById('entrega').value = '';
     document.getElementById('grav_externaInput').value = '';
-    document.getElementById('descricao_A').value = '';
+    document.getElementById('descricao_Alianca').value = '';
     document.getElementById('grav_m').value = '';
     document.getElementById("outros").value = '';
     document.getElementById('nome_p').value = '';  

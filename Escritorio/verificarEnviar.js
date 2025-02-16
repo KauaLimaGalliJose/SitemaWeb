@@ -26,7 +26,7 @@ export function verificar() {
     let pedido_outros = document.getElementById('nome_p').value;
     let respostas = document.getElementById('numeracao_m').value;
     let respostas2 = document.getElementById('numeracao_f').value;
-    let descricao = document.getElementById('descricao_P').value;
+    let descricao = document.getElementById('descricao_Pedido').value;
     let dataInput = document.getElementById('entrega').value;
  
     let respostas3 = [parseFloat(respostas)]; //'Number' transforma em numero e 'parseFloat' em decimais 
@@ -103,11 +103,11 @@ export function verificar() {
     }
 // --------------------------------------Validação das Descrição do Pedido
     if(descricao.trim() === ''){
-        borderRed('descricao_P')
+        borderRed('descricao_Pedido')
         valido = false;
     }
     else{
-        borderBlack('descricao_P')
+        borderBlack('descricao_Pedido')
     }
 // ---------------------------------------------------------Validação Imagem
     if(preview.style.display !== 'block'){
@@ -142,7 +142,8 @@ export function enviar(){
         event.preventDefault();
         verificar()
         
-        if (chave === true) {   
+        if (chave === true) {  
+            document.getElementById('btEnviar').disabled = true;
             const dadosInputs = new FormData(this);
 
             fetch("./PG2_Escritorio1.php", { 
@@ -152,14 +153,17 @@ export function enviar(){
             .then(response => response.text()) 
             .then(data => {
                 console.log("Resposta do servidor: " + data);
+                document.getElementById('btEnviar').disabled = false; // Reativa o botão após a resposta
             })
             .catch(error => console.error("Erro:", error));
+            document.getElementById('btEnviar').disabled = false;
         } 
         else {
             console.log("Erro: Formulário inválido, não enviado.");
         }
+        document.getElementById('btEnviar').disabled = false; 
     });
-  
+    
 }
 
 export function naoenviar(){
