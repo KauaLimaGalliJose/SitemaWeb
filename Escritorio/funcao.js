@@ -64,4 +64,3 @@ export function limpar(){
     document.getElementById('modelo_rainha').style.display = 'block';
     document.getElementById('uploadimg').src = '#';
 }
-

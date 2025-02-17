@@ -3,12 +3,15 @@ import { diaMesAno } from "./dataHora.js";
 //Variaveis do P , PG e PE
 const select = document.getElementById('n_p');
 let  select_N = select.options[0];
+let  select_P = select.options[1];
 
 // Variáveis
 const formulario = document.getElementById("formulario");
 const cliente1 = document.getElementById('c1');
 const cliente2 = document.getElementById('c2');
 const cliente3 = document.getElementById('c3');
+const estoqueMasculina = document.querySelector('#estoqueMasculina');
+const estoqueFeminina = document.querySelector('#estoqueFeminina');
 let chave = null;
 
 // Função para mudar a cor da borda
@@ -87,7 +90,7 @@ export function verificar() {
     }
     //--------------------------------------Validação das numeração Masculina
     if((respostas3 <= 6) || (respostas3 >= 40) || isNaN(respostas3)){ 
-         borderRed('numeracao_m')    
+        borderRed('numeracao_m')    
         valido = false;
     }
     else{
@@ -125,6 +128,14 @@ export function verificar() {
     }
     else{
         borderBlack('entrega')
+    }
+    // --------------------------------------------------------Verificação Rodapé
+    if(estoqueFeminina.checked && estoqueMasculina.checked && select_P.selected){
+        valido = false;
+        borderRed('rodape')
+    }
+    else{
+        borderBlack('rodape')
     }
 
     chave = valido;

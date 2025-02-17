@@ -1,6 +1,6 @@
 // imports
 import { voltar, avancar, limpar } from "./funcao.js";
-import { radioCabecalho, check_unidade, gravacaoExterna } from "./radiosChitobox.js";
+import { radioCabecalho, check_unidade, gravacaoExterna, checkboxRodape } from "./radiosChitobox.js";
 import img_modelo  from "./imagemInput.js";
 import { dataCabecalho, dataEntrega} from "./dataHora.js";
 import { enviar, naoenviar, verificar } from "./verificarEnviar.js";
@@ -32,6 +32,7 @@ addEventListener('change', function(){
     radioCabecalho()
     check_unidade()
     gravacaoExterna()
+    checkboxRodape()
 }); 
 
 imagemBt.addEventListener('click', function(){

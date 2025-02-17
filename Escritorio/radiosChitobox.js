@@ -47,12 +47,53 @@ export function gravacaoExterna(){
     //Variaveis
     const gravacaoCheckbox = document.getElementById('gravacao_externa')
     const gravacaoInput = document.getElementById('grav_externaInput')
- 
+
     if(gravacaoCheckbox.checked){
         gravacaoInput.style.visibility = "visible"
     }
     else{
         gravacaoInput.style.visibility = "hidden"
         gravacaoInput.value = null;
+    }
+}
+
+export function checkboxRodape(){
+    const semPedra = document.querySelector("#semPedra");
+    const comPedra = document.querySelector('#comPedra');
+    const estoqueMasculina = document.querySelector('#estoqueMasculina');
+    const estoqueFeminina = document.querySelector('#estoqueFeminina');
+ 
+//--------------------------------------------verificando Pedra
+    if(semPedra.checked){
+        comPedra.checked = false;
+        semPedra.value = true;
+        comPedra.value = false;
+    }
+    if(comPedra.checked){
+        semPedra.checked = false;
+        comPedra.value = true;
+        semPedra.value = false;
+        
+    }
+    if(!comPedra.checked && !semPedra.checked){
+        semPedra.value = false;
+        comPedra.value = false;
+    }
+//--------------------------------------------verificando estoque 
+    if(estoqueFeminina.checked){
+        estoqueFeminina.value = true;
+        estoqueMasculina.value = false;
+    }
+    if(estoqueMasculina.checked){
+        estoqueMasculina.value = true;
+        estoqueFeminina.value = false;
+    }
+    if(estoqueFeminina.checked && estoqueMasculina.checked){
+        estoqueFeminina.value = true;
+        estoqueMasculina.value = true;
+    }
+    if(!estoqueFeminina.checked && !estoqueMasculina.checked){
+        estoqueFeminina.value = false;
+        estoqueMasculina.value = false;
     }
 }
