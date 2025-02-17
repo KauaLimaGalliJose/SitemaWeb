@@ -12,7 +12,7 @@
 </head>
 <body>
    <main>
-    <form id="formulario">
+    <form id="formulario" enctype="multipart/form-data" method="post">
         <div id="cabecalho">
             <div id="cabecalho_cima">
                 <div id="casa">
@@ -109,7 +109,7 @@
                     </div>
                 </div>
                     <div id="imagem_p" >
-                        <input type="file" src="#" id="uploadimg">
+                        <input type="file" src="#" name="imagem" id="uploadimg" accept="imagem/*">
                         <div id="modelo">
                         <img id="modelo_rainha" src="rj.png.webp" alt="rainha">
                         <img id="modelo2" src="#" alt="Pré-visualização da Imagem" style="display: none;">
@@ -119,11 +119,17 @@
                             <div id="dia_horas">
                                 <div id="Div_entrega">
                                     Entrega:<input id="entrega" name="dataEntrega" type="date">
-                                </div>
-                                <select  name="horaPedido" id="horaPedido">
-                                    <option id="Urgente" >Urgente</option>
-                                    <option id="Antes_12:00" >Até 14:00</option>
-                                    <option id="Depois_13:00" >Até 17:00</option>
+                                </div>Largura
+                                <select  name="largura" id="horaPedido">
+                                    <option id="2mm">2mm</option>
+                                    <option id="3mm" >3mm</option>
+                                    <option id="4mm" >4mm</option>
+                                    <option id="5mm" >5mm</option>
+                                    <option id="6mm" >6mm</option>
+                                    <option id="7mm" >7mm</option>
+                                    <option id="8mm" >8mm</option>
+                                    <option id="9mm" >9mm</option>
+                                    <option id="10mm" >10mm</option>
                                 </select>
                             </div>
                             <div id="grav_externa">
@@ -136,12 +142,12 @@
         <footer>
             <input type="checkbox" id="gravacao_externa"  name = 'gravacao_externa' class="radio" >Gravação Externa
             <div class="div_footer">
-                <input type="radio" name = 'pedra' class="radio">Par com pedra
-            <input type="radio"  name = 'pedra' class="radio" >Sem Pedra 
+                <input type="checkbox" name = 'pedra' class="radio">Par com pedra
+            <input type="checkbox"  name = 'pedra' class="radio" >Sem Pedra 
             </div>
             <div class="div_footer">
-                <input type="radio"  name = 'estoque' class="radio" >Feminina Estoque
-                <input type="radio"  name = 'estoque' class="radio" >Masculina Estoque
+                <input type="checkbox"  name = 'estoque' class="radio" >Feminina Estoque
+                <input type="checkbox"  name = 'estoque' class="radio" >Masculina Estoque
             </div>
         </footer>
     </form>
