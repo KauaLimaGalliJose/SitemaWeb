@@ -3,6 +3,7 @@ include_once('conexao.php');
 
 //imagem 
 if(isset($_FILES['imagem']) && !empty($_FILES['imagem'])){
+    $imagem = "../imagem/".$_FILES['imagem']['name'];
     move_uploaded_file($_FILES['imagem']['tmp_name'], "../imagem/".$_FILES['imagem']['name'] );
 }
 
@@ -18,6 +19,12 @@ $descricao_Pedido = $_POST['descricao_Pedido'];
 $descricaoAlianca = $_POST['descricao_Alianca'];
 $gravacao_exter = $_POST['gravacao_exter'];
 $gravacao_inter = $_POST['gravacao_inter'];
+$largura = $_POST['largura'];
+$outrosClientes = $_POST['txtcliente'];
+$parSemPedra = $_POST['semPedra'];
+$parComPedra = $_POST['comPedra'];
+$estoqueF = $_POST['estoqueFeminina'];
+$estoqueM = $_POST['estoqueMasculina'];
 
 $idPedidos = $numeroPedido ."-". $dataEntrega;
 
@@ -25,6 +32,6 @@ $idPedidos = $numeroPedido ."-". $dataEntrega;
 // passando pro banco de dados
 
 $dados = mysqli_query($conn, "INSERT INTO pedidos 
-    (numeroPedido, cliente, nomePedido, numeracaoM, numeracaoF, descricaoPedido, descricaoAlianca, gravacaoInterna, gravacaoExterna) 
-    VALUES ('$idPedidos', '$cliente', '$nomePedido', '$m', '$f', '$descricao_Pedido', '$descricaoAlianca', '$gravacao_inter', '$gravacao_exter')");
+    (idpedido, cliente, nomePedido, numF, numeM, descricaoPedido, descricaoAlianca,largura, gravacaoInterna, gravacaoExterna,outrosClientes,imagem,parComEstoque,parSemEstoque,parPedra,parSemPedra) 
+    VALUES ('$idPedidos', '$cliente', '$nomePedido', '$f', '$m', '$descricao_Pedido', '$descricaoAlianca','$largura', '$gravacao_inter', '$gravacao_exter', '$outrosClientes','$imagem' , '$estoqueF' ,'$estoqueM', '$parSemPedra' , '$parComPedra' )");
 ?>
