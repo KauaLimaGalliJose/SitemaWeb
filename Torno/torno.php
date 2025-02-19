@@ -11,12 +11,11 @@
         <div id="cabecalho">
           
         </div>
-        <div id="conteudo">
-
-        </div>
-        <div id="rodape">
-
-        </div>
     </main>
+    <?php 
+    print('<h1>Torno</h1>');
+
+    
+    ?>
 </body>
 </html>
