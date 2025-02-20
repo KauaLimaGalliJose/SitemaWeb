@@ -16,13 +16,15 @@
     include_once('../conexao.php');
 
     $dadosImagem = ('SELECT imagem from pedidos');
+    $dadosLargura = ('SELECT largura FROM pedidos');
 
-    $resultadoImagem = mysqli_query($conectar, $dadosImagem);
+    $resultadoImagem = mysqli_query($conectar, $dadosImagem ,$dadosLargura);
+
 
     if ($linha = mysqli_fetch_assoc($resultadoImagem)) {
-        echo "ID: " . $linha["imagem"] . "<br>";
-        echo "ID: " . $linha["imagem"] . "<br>";
-        echo "ID: " . $linha["imagem"] . "<br>";
+        echo ": " . $linha["imagem"] . "<br>";
+        echo ": " . $linha["largura"] . "<br>";
+        echo ": " . $linha["imagem"] . "<br>";
     } else {
         echo "Nenhum usuário encontrado com esse nome.";
     }
