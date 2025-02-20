@@ -13,7 +13,19 @@
         </div>
     </main>
     <?php 
-    print('<h1>Torno</h1>');
+    include_once('../conexao.php');
+
+    $dadosImagem = ('SELECT imagem from pedidos');
+
+    $resultadoImagem = mysqli_query($conectar, $dadosImagem);
+
+    if ($linha = mysqli_fetch_assoc($resultadoImagem)) {
+        echo "ID: " . $linha["imagem"] . "<br>";
+        echo "ID: " . $linha["imagem"] . "<br>";
+        echo "ID: " . $linha["imagem"] . "<br>";
+    } else {
+        echo "Nenhum usuário encontrado com esse nome.";
+    }
 
     
     ?>
