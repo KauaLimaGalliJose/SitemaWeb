@@ -317,13 +317,29 @@ margin-left: 10px;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
+    width: 350px;
 }
 
 #uploadimg {
-    display: flex;
-    margin-bottom: 5px;
+    display: none;
     font-size: 50%;
     
+}
+.botaoImg{
+    border-radius:10px ;
+    color: rgb(0, 0, 0);
+    font-size: 100%;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 3px;
+}
+.botaoImg:hover{
+    background-color: rgb(255, 0, 0);
+    color: aliceblue;
+    transition: 0.3s;
+    transform: scale(110%);
 }
 
 #modelo{
