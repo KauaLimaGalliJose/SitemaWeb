@@ -1,4 +1,5 @@
 import { diaMesAno } from "./dataHora.js";
+import { contador } from "./main.js";
 
 //Variaveis do P , PG e PE
 const select = document.getElementById('n_p');

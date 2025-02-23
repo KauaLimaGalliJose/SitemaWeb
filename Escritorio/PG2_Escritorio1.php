@@ -30,7 +30,7 @@ $idPedidos = $numeroPedido ."-". $dataEntrega;
 
 if($cliente == 'Centro_Alianca'){
     $idCentroAlianca = $cliente . '-' . $nomePedidoC;
-    $idPedidos = $id;
+    $idPedidos = $idCentroAlianca;
 }
 if($cliente == 'Outros'){
     $idOutros = $outrosClientes . '-' . $nomePedidoC;

@@ -7,7 +7,7 @@ function ano() {
 
     return `${ano}`;
 }
-function diaMes() {
+export function diaMes() {
     const dia = String(dataAtual.getDate()).padStart(2, '0');
     const mes = String(dataAtual.getMonth() + 1).padStart(2, '0'); // Janeiro é 0
 
