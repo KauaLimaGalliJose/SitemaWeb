@@ -34,8 +34,21 @@
     </div>
     <div id="phpDiv">
         <?php 
-            
-        ?>
+            $dados = "SELECT imagem,idpedidos FROM pedidos";
+           $dadosImagem = mysqli_query($conectar, $dados );
+        
+           
+            if($dadosImagem){
+                while($linha = mysqli_fetch_assoc($dadosImagem) ){
+                    ?>
+                    <div class="pedidosImagem">
+                 <img class= "Imagem" src=" <?php echo $linha['imagem']; ?>">
+                 <?php echo $linha['idpedidos']; ?>
+                </div> 
+                <?php
+                }
+            } ?>
+        
     </div>
     </main>
 </body>

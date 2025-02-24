@@ -4,7 +4,6 @@ import { radioCabecalho, check_unidade, gravacaoExterna, checkboxRodape } from "
 import img_modelo  from "./imagemInput.js";
 import { dataCabecalho, dataEntrega} from "./dataHora.js";
 import { enviar, naoenviar, verificar } from "./verificarEnviar.js";
-import { gerarDocumento } from "./GeradorWord.js";
 //Buttons
 const voltarBt = document.getElementById('seta_esquerda');
 const avancarBt = document.getElementById('seta_direita');
@@ -47,7 +46,6 @@ enviarBt.addEventListener('click',function(){
     if(verificar() === true){
         contador =  avancar(contador.contador_P,contador.contador_Pg,contador.contador_Pe)
         enviar()
-        gerarDocumento()
     }
     else{
         naoenviar()
