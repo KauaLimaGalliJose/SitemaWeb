@@ -1,6 +1,3 @@
-<?php include_once('../conexao.php');
-
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -10,7 +7,6 @@
     <title>Torno</title>
 </head>
 <body>
-    <main>
     <div id="cabecalho">
         <div id="cabecalho_menu">
             <div id="casa">
@@ -32,24 +28,26 @@
                 </select>
         </div>
     </div>
+    <?php include_once('../conexao.php');?>
     <div id="phpDiv">
         <?php 
             $dados = "SELECT imagem,idpedidos FROM pedidos";
-           $dadosImagem = mysqli_query($conectar, $dados );
+           $dadosPedidos = mysqli_query($conectar, $dados );
         
            
-            if($dadosImagem){
-                while($linha = mysqli_fetch_assoc($dadosImagem) ){
+            if($dadosPedidos){
+                while($linha = mysqli_fetch_assoc($dadosPedidos) ){
                     ?>
                     <div class="pedidosImagem">
-                 <img class= "Imagem" src=" <?php echo $linha['imagem']; ?>">
-                 <?php echo $linha['idpedidos']; ?>
+                    <?php echo $linha['idpedidos']; ?>
+                    <img class= "Imagem" src=" <?php echo $linha['imagem']; ?>">
+                    <?php echo $linha['idpedidos']; ?>
+                    <img class= "Imagem" src=" <?php echo $linha['imagem']; ?>">
                 </div> 
                 <?php
                 }
             } ?>
         
     </div>
-    </main>
 </body>
 </html>
