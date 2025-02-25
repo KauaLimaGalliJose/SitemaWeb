@@ -31,17 +31,13 @@
     <?php include_once('../conexao.php');?>
     <div id="phpDiv">
         <?php 
-            $dados = "SELECT imagem,idpedidos FROM pedidos";
+            $dados = "SELECT DISTINCT imagem,idpedidos FROM pedidos";
            $dadosPedidos = mysqli_query($conectar, $dados );
-        
-           
+
             if($dadosPedidos){
                 while($linha = mysqli_fetch_assoc($dadosPedidos) ){
                     ?>
                     <div class="pedidosImagem">
-                    <?php echo $linha['idpedidos']; ?>
-                    <img class= "Imagem" src=" <?php echo $linha['imagem']; ?>">
-                    <?php echo $linha['idpedidos']; ?>
                     <img class= "Imagem" src=" <?php echo $linha['imagem']; ?>">
                 </div> 
                 <?php
