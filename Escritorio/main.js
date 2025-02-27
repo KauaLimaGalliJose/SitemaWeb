@@ -4,6 +4,7 @@ import { radioCabecalho, check_unidade, gravacaoExterna, checkboxRodape } from "
 import img_modelo  from "./imagemInput.js";
 import { dataCabecalho, dataEntrega} from "./dataHora.js";
 import { enviar, naoenviar, verificar } from "./verificarEnviar.js";
+
 //Buttons
 const voltarBt = document.getElementById('seta_esquerda');
 const avancarBt = document.getElementById('seta_direita');
@@ -48,7 +49,7 @@ enviarBt.addEventListener('click',function(){
         enviar()
     }
     else{
-        naoenviar()
+        return naoenviar()
     }
 });
 

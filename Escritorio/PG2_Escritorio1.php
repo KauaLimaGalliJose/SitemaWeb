@@ -26,20 +26,55 @@ $comPedra = isset($_POST['comPedra']) ? $_POST['comPedra'] : null;
 $estoqueFeminina = isset($_POST['estoqueFeminina']) ? $_POST['estoqueFeminina'] : null;
 $estoqueMasculina = isset($_POST['estoqueMasculina']) ? $_POST['estoqueMasculina'] : null;
 
+$numeroPedidoSplit = str_split($numeroPedido,1);
+
+
 $idPedidos = $numeroPedido ."-". $dataEntrega;
 
+// Outros Clientes 
 if($cliente == 'Centro_Alianca'){
     $idCentroAlianca = $cliente . '-' . $nomePedidoC;
     $idPedidos = $idCentroAlianca;
+
+    // passando pro banco de dados
+    $dadosp = mysqli_query($conectar, "INSERT INTO pedidosp 
+    (idpedidos, cliente, nomePedido, numF, numeM, descricaoPedido, descricaoAlianca,largura, gravacaoInterna, gravacaoExterna,outrosClientes,imagem,parEstoqueF,parEstoqueM,parPedra,parSemPedra) 
+    VALUES ('$idPedidos', '$cliente', '$nomePedido', '$f', '$m', '$descricao_Pedido', '$descricaoAlianca','$largura', '$gravacao_inter', '$gravacao_exter', '$outrosClientes','$imagem' , '$estoqueFeminina' ,'$estoqueMasculina', '$semPedra' , '$comPedra' )");
+
 }
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 if($cliente == 'Outros'){
     $idOutros = $outrosClientes . '-' . $nomePedidoC;
     $idPedidos =  $idOutros;
+
+    // passando pro banco de dados
+    $dadosp = mysqli_query($conectar, "INSERT INTO pedidosp 
+    (idpedidos, cliente, nomePedido, numF, numeM, descricaoPedido, descricaoAlianca,largura, gravacaoInterna, gravacaoExterna,outrosClientes,imagem,parEstoqueF,parEstoqueM,parPedra,parSemPedra) 
+    VALUES ('$idPedidos','$cliente', '$nomePedido', '$f', '$m', '$descricao_Pedido', '$descricaoAlianca','$largura', '$gravacao_inter', '$gravacao_exter', '$outrosClientes','$imagem' , '$estoqueFeminina' ,'$estoqueMasculina', '$semPedra' , '$comPedra' )");
+    
+}
+if($numeroPedidoSplit[1] == 'G'){
+    // passando pro banco de dados
+    $dadosg = mysqli_query($conectar, "INSERT INTO pedidospg
+    (idpedidos, cliente, nomePedido, numF, numeM, descricaoPedido, descricaoAlianca,largura, gravacaoInterna, gravacaoExterna,outrosClientes,imagem,parEstoqueF,parEstoqueM,parPedra,parSemPedra) 
+    VALUES ('$idPedidos','$cliente', '$nomePedido', '$f', '$m', '$descricao_Pedido', '$descricaoAlianca','$largura', '$gravacao_inter', '$gravacao_exter', '$outrosClientes','$imagem' , '$estoqueFeminina' ,'$estoqueMasculina', '$semPedra' , '$comPedra' )");
+    
+   
+}
+elseif($numeroPedidoSplit[1] == 'E'){
+    // passando pro banco de dados
+    $dadose = mysqli_query($conectar, "INSERT INTO pedidospe
+    (idpedidos, cliente, nomePedido, numF, numeM, descricaoPedido, descricaoAlianca,largura, gravacaoInterna, gravacaoExterna,outrosClientes,imagem,parEstoqueF,parEstoqueM,parPedra,parSemPedra) 
+    VALUES ('$idPedidos','$cliente', '$nomePedido', '$f', '$m', '$descricao_Pedido', '$descricaoAlianca','$largura', '$gravacao_inter', '$gravacao_exter', '$outrosClientes','$imagem' , '$estoqueFeminina' ,'$estoqueMasculina', '$semPedra' , '$comPedra' )");
+    
+   
+}
+else{
+    // passando pro banco de dados
+    $dadosp = mysqli_query($conectar, "INSERT INTO pedidosp 
+    (idpedidos, cliente, nomePedido, numF, numeM, descricaoPedido, descricaoAlianca,largura, gravacaoInterna, gravacaoExterna,outrosClientes,imagem,parEstoqueF,parEstoqueM,parPedra,parSemPedra) 
+    VALUES ('$idPedidos','$cliente', '$nomePedido', '$f', '$m', '$descricao_Pedido', '$descricaoAlianca','$largura', '$gravacao_inter', '$gravacao_exter', '$outrosClientes','$imagem' , '$estoqueFeminina' ,'$estoqueMasculina', '$semPedra' , '$comPedra' )");
+   
 }
 
-// passando pro banco de dados
-
-$dados = mysqli_query($conectar, "INSERT INTO pedidosp 
-    (idpedidos, cliente, nomePedido, numF, numeM, descricaoPedido, descricaoAlianca,largura, gravacaoInterna, gravacaoExterna,outrosClientes,imagem,parEstoqueF,parEstoqueM,parPedra,parSemPedra) 
-    VALUES ('$idPedidos', '$cliente', '$nomePedido', '$f', '$m', '$descricao_Pedido', '$descricaoAlianca','$largura', '$gravacao_inter', '$gravacao_exter', '$outrosClientes','$imagem' , '$estoqueFeminina' ,'$estoqueMasculina', '$semPedra' , '$comPedra' )");
 ?>
