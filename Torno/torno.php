@@ -26,22 +26,32 @@
                         <option value="9mm">9mm</option>
                         <option value="10mm">10mm</option>
                 </select>
+
+                <div id="pesquisa">
+                    <input id="pesquisaInput" type="text" oninput="this.value = this.value.toUpperCase();" placeholder="Número Pedido">
+                </div>
         </div>
     </div>
     <?php include_once('../conexao.php');?>
     <div id="phpDiv">
         <?php 
-            $dados = "SELECT DISTINCT imagem,idpedidos FROM pedidos";
+            $dados = "SELECT imagem ,LEFT(idpedidos,2) AS P FROM pedidos ";
            $dadosPedidos = mysqli_query($conectar, $dados );
 
             if($dadosPedidos){
                 while($linha = mysqli_fetch_assoc($dadosPedidos) ){
-                    ?>
-                    <div class="pedidosImagem">
-                    <img class= "Imagem" src=" <?php echo $linha['imagem']; ?>">
-                </div> 
-                <?php
+
+                    if($linha['P'] == 'PE'){
+                        echo ' é PE';
                 }
+               elseif($linha['P'] == 'PG'){
+                    echo ' é PG';
+                }
+                else{
+                    echo $linha['P'] . '</br>';
+                    echo $linha['imagem'] . '</br>';
+                }
+            }
             } ?>
         
     </div>

@@ -39,7 +39,7 @@ if($cliente == 'Outros'){
 
 // passando pro banco de dados
 
-$dados = mysqli_query($conectar, "INSERT INTO pedidos 
+$dados = mysqli_query($conectar, "INSERT INTO pedidosp 
     (idpedidos, cliente, nomePedido, numF, numeM, descricaoPedido, descricaoAlianca,largura, gravacaoInterna, gravacaoExterna,outrosClientes,imagem,parEstoqueF,parEstoqueM,parPedra,parSemPedra) 
     VALUES ('$idPedidos', '$cliente', '$nomePedido', '$f', '$m', '$descricao_Pedido', '$descricaoAlianca','$largura', '$gravacao_inter', '$gravacao_exter', '$outrosClientes','$imagem' , '$estoqueFeminina' ,'$estoqueMasculina', '$semPedra' , '$comPedra' )");
 ?>

@@ -52,8 +52,21 @@ main{
 #larguraSelect{
 
     border: solid black 3px;
+    border-radius: 5px;
     margin-left: 15px;
     width: 100px;
+    height: 30px;
+    font-size: 120%;
+    font-weight: 700;
+}
+#pesquisa{
+    display: flex;
+    margin-left: 45px;
+}
+#pesquisaInput{
+    border: solid black 3px;
+    border-radius: 5px;
+    width: 150px;
     height: 30px;
     font-size: 120%;
     font-weight: 700;
@@ -67,6 +80,12 @@ main{
 
     font-size: 90%;
     padding: 5%;
+}
+#DivPedido{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .pedidosImagem{
