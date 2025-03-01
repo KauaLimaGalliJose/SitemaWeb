@@ -1,2 +1,4 @@
 # Sistema_RJ
-o Site em desenvolvimento
+o Site em desenvolvimento. 
+Para funcionar completamete precisa do Banco MySQL 
+fica na Imagem teste.sql
