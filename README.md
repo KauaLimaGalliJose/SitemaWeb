@@ -1,6 +1,25 @@
-# Web System
+# Sistema Web
 
-It is a system designed to be operated through a web browser. Its purpose is to allow the registration of orders and their organization according to the specific needs of each user. However, the system is still in the development phase.
+📖**Tutorial – Requisitos e Configuração do Ambiente**
+ 
+ **Requisitos**
+ 
+  ➡️ Um servidor web (pode ser local ou dedicado).
+  
+  ➡️ Alternativamente, você pode usar o XAMPP.
+  
+  ➡️ É necessário subir os serviços Apache2 e MySQL.
+
+🛠️ **Passos para Configuração**
+
+  1º Passo – Obter o Banco de Dados Atual
+  
+  2º Passo – Acesse a pasta: Sistema_RJ/imagem/
+  
+  3º Passo – localize o arquivo do banco de dados "Atual".
+
+  4º Passo – Importar o Banco de Dados
+  Importe o banco de dados localizado no passo anterior para o seu MySQL local (utilizando phpMyAdmin ou linha de comando).
 
 
-fica na /Imagem
+
