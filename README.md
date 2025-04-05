@@ -2,7 +2,7 @@
 
 📖**Tutorial – Requisitos e Configuração do Ambiente**
  
- **Requisitos**
+ **Requisitos** ----------------------------------------
  
   ➡️ Um servidor web (pode ser local ou dedicado).
   
@@ -10,7 +10,7 @@
   
   ➡️ É necessário subir os serviços Apache2 e MySQL.
 
-🛠️ **Passos para Configuração**
+🛠️ **Passos para Configuração** ------------------------
 
   1º Passo – Obter o Banco de Dados Atual
   
