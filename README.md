@@ -21,5 +21,24 @@
   4º Passo – Importar o Banco de Dados
   Importe o banco de dados localizado no passo anterior para o seu MySQL local (utilizando phpMyAdmin ou linha de comando).
 
+## 📦 Finalidade do Sistema
+
+ Este sistema é utilizado para a **criação e controle de pedidos**, organizados em três categorias:
+ 
+ - **PF (Pedidos para Fabricação)**  
+   Pedidos que ainda serão produzidos.
+ 
+ - **PG (Pedidos para Fabricação e Estoque)**  
+   Parte do pedido será produzida, e a outra parte será separada do estoque.
+ 
+ - **PE (Pedidos em Estoque)**  
+   Pedidos que já estão prontos e disponíveis no estoque.
+
+ ---
+
+## 💡 Observações
+
+- Certifique-se de que os serviços do servidor estão ativos antes de acessar o sistema.
+- O sistema pode ser acessado via navegador após configurar o ambiente corretamente.
 
 
