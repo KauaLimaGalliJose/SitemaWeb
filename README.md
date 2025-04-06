@@ -7,9 +7,9 @@
  
  **Requisitos** ----------------------------------------
  
-  ➡️ Um servidor web (pode ser local ou dedicado).
+  ➡️ Um servidor web (pode ser local ou dedicado).Alternativamente, você pode usar o XAMPP.
   
-  ➡️ Alternativamente, você pode usar o XAMPP.
+  ➡️ Esse Diretorio "SitemaWeb".
   
   ➡️ É necessário subir os serviços Apache2 e MySQL.
 
@@ -17,7 +17,7 @@
 
   **1º Passo** – Obter o Banco de Dados Atual
   
-  **2º Passo** – Acesse a pasta: Sistema_RJ/imagem/
+  **2º Passo** – Acesse a pasta: `Sistema_RJ/imagem/`
   
   **3º Passo** – localize o arquivo do banco de dados "Atual".
 
@@ -29,7 +29,7 @@
 
   Comando para criar Banco de dados 'teste'  🢃🢃
         
-        CREATE DATABASE teste      
+        CREATE DATABASE teste;      
     
   **5º Passo** – Importar as tabelas
   Importe o banco de dados localizado no passo anterior para o seu MySQL local (utilizando phpMyAdmin ou linha de comando).
