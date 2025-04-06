@@ -1,5 +1,8 @@
 # Sistema Web
 
+** ⚠️ **Atenção:** Este sistema é uma **versão Beta**, desenvolvida para apresentar o funcionamento geral do sistema como um todo.  
+> 📬 Fique à vontade para me chamar no GitHub para dúvidas, sugestões ou contribuições!**
+
 📖**Tutorial – Requisitos e Configuração do Ambiente**
  
  **Requisitos** ----------------------------------------
