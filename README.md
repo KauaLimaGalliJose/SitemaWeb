@@ -34,6 +34,9 @@
   **5º Passo** – Importar as tabelas
   Importe o banco de dados localizado no passo anterior para o seu MySQL local (utilizando phpMyAdmin ou linha de comando).
 
+  **6º Passo** - Caso tenha duvida de como utilizar o **XAMPP** acesse o link - [Acesse o Youtube](https://youtu.be/i_ypCik4VX0?si=f6u8JcSR6tSgAN0m)
+
+
 ## 📦 Finalidade do Sistema
 
  Este sistema é utilizado para a **criação e controle de pedidos**, organizados em três categorias:
