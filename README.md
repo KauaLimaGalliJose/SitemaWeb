@@ -1,6 +1,6 @@
 # Sistema Web em Desenvolvimento
 
-⚠️ **Atenção:** Este sistema é uma **versão Beta**, desenvolvida para apresentar o funcionamento geral do sistema como um todo.  
+⚠️ **Atenção:** Este sistema é uma **versão Beta**, desenvolvida para apresentar o funcionamento apenas na aba do Escritorio.  
 > 📬 Fique à vontade para me chamar no GitHub para dúvidas, sugestões ou contribuições!**
 
 📖**Tutorial – Requisitos e Configuração do Ambiente**
@@ -15,13 +15,23 @@
 
 🛠️ **Passos para Configuração** ------------------------
 
-  1º Passo – Obter o Banco de Dados Atual
+  **1º Passo** – Obter o Banco de Dados Atual
   
-  2º Passo – Acesse a pasta: Sistema_RJ/imagem/
+  **2º Passo** – Acesse a pasta: Sistema_RJ/imagem/
   
-  3º Passo – localize o arquivo do banco de dados "Atual".
+  **3º Passo** – localize o arquivo do banco de dados "Atual".
 
-  4º Passo – Importar o Banco de Dados
+  **4º Passo** - ⬇️⬇️⬇️
+
+  caso escolha o **XAMPP** -– Abra o XAMPP start o Apache e o MySQL , click em admin no Mysql e crie um Banco de dados com nome 'teste'
+
+  caso escolha o **Servidor** -–   baixe o phpmyadmin (caso tenha preferencia de usar outra forma de controlar o banco de dado pode usar) , crie um Banco de dados com nome 'teste'
+
+  Comando para criar Banco de dados 'teste'  🢃🢃
+        
+        CREATE DATABASE teste      
+    
+  **5º Passo** – Importar as tabelas
   Importe o banco de dados localizado no passo anterior para o seu MySQL local (utilizando phpMyAdmin ou linha de comando).
 
 ## 📦 Finalidade do Sistema
